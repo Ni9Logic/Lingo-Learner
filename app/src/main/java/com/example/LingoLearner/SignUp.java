@@ -202,9 +202,11 @@ public class SignUp extends AppCompatActivity {
         progressbar.setVisibility(View.VISIBLE);
 
         Users users = new Users(username, email, password, confirmPassword, dateOfBirth);
+
         database = FirebaseDatabase.getInstance();
-        FirebaseUser firebaseUser= mAuth.getCurrentUser();
+        FirebaseUser firebaseUser = mAuth.getCurrentUser();
         reference = database.getReference("Users");
+
         reference.child(username).setValue(users).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
@@ -222,26 +224,23 @@ public class SignUp extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                     //Update display name of user
-                    UserProfileChangeRequest profileChangeRequest= new UserProfileChangeRequest.Builder().setDisplayName(username).build();
+                    UserProfileChangeRequest profileChangeRequest = new UserProfileChangeRequest.Builder().setDisplayName(username).build();
                     firebaseUser.updateProfile(profileChangeRequest);
                 } else {
                     Toast.makeText(SignUp.this, "Registration Failed", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-
-
-
         checkUsernameAvailability(username, email, password, dateOfBirth);
     }
 
     private void checkUsernameAvailability(final String username, final String email, final String password, final String dateOfBirth) {
         DatabaseReference usernameRef = database.getReference("username").child(username);
-
+        DatabaseReference emailRef = database.getReference("email").child(email);
         usernameRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (dataSnapshot.exists()) {
+                if (dataSnapshot.getKey().toString().equals(username)) {
                     // Username is already taken
                     progressbar.setVisibility(View.GONE);
                     Toast.makeText(SignUp.this, "Username is already taken", Toast.LENGTH_SHORT).show();
@@ -254,12 +253,36 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 progressbar.setVisibility(View.GONE);
-                Toast.makeText(SignUp.this, "Database Error: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(SignUp.this, "Database Error Test: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+
+//        Checking if email already exists or not
+        emailRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.getKey().toString().equals(email)) {
+                    // Username is already taken
+                    progressbar.setVisibility(View.VISIBLE);
+                    Toast.makeText(SignUp.this, "Email is already taken", Toast.LENGTH_SHORT).show();
+                } else {
+                    // Username is available, proceed with sign up
+                    createUserWithEmailAndPassword(email, password, username, dateOfBirth);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                progressbar.setVisibility(View.VISIBLE);
+                Toast.makeText(SignUp.this, "Database Error Test: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
+
     private void createUserWithEmailAndPassword(String email, String password, String username, String dateOfBirth) {
+        System.out.println("I am in Create user with email");
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -303,6 +326,7 @@ public class SignUp extends AppCompatActivity {
     }
 
     private void showEmailInUseDialog(String email) {
+        System.out.println("I am inside show Email In Use Dialog");
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -337,6 +361,7 @@ public class SignUp extends AppCompatActivity {
     }
 
     private void sendPasswordResetEmail(String email) {
+        System.out.println("I am inside Send Password reset email");
         mAuth.sendPasswordResetEmail(email)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
@@ -356,8 +381,9 @@ public class SignUp extends AppCompatActivity {
     }
 
     private void saveUserDataToDatabase(String userId, String email, String username, String dateOfBirth) {
+        System.out.println("I am inside Save User Data To Database");
         DatabaseReference usersRef = database.getReference("Users");
-        Users user = new Users(username, email,dateOfBirth);
+        Users user = new Users(username, email, dateOfBirth);
 
         usersRef.child(userId).setValue(user)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
