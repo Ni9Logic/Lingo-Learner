@@ -105,7 +105,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         dataList.add("Shapes");
         dataList.add("Short Stories");
         dataList.add("Games");
-        dataList.add("Writting");
+        dataList.add("Writing");
         dataList.add("Drawing");
 
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, dataList);

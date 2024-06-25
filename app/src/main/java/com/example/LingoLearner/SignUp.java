@@ -236,11 +236,10 @@ public class SignUp extends AppCompatActivity {
 
     private void checkUsernameAvailability(final String username, final String email, final String password, final String dateOfBirth) {
         DatabaseReference usernameRef = database.getReference("username").child(username);
-        DatabaseReference emailRef = database.getReference("email").child(email);
         usernameRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (dataSnapshot.getKey().toString().equals(username)) {
+                if (dataSnapshot.exists()) {
                     // Username is already taken
                     progressbar.setVisibility(View.GONE);
                     Toast.makeText(SignUp.this, "Username is already taken", Toast.LENGTH_SHORT).show();
@@ -257,26 +256,6 @@ public class SignUp extends AppCompatActivity {
             }
         });
 
-//        Checking if email already exists or not
-        emailRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (dataSnapshot.getKey().toString().equals(email)) {
-                    // Username is already taken
-                    progressbar.setVisibility(View.VISIBLE);
-                    Toast.makeText(SignUp.this, "Email is already taken", Toast.LENGTH_SHORT).show();
-                } else {
-                    // Username is available, proceed with sign up
-                    createUserWithEmailAndPassword(email, password, username, dateOfBirth);
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                progressbar.setVisibility(View.VISIBLE);
-                Toast.makeText(SignUp.this, "Database Error Test: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
 
     }
 
