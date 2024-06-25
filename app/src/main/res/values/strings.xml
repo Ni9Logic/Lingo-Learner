@@ -1,0 +1,302 @@
+<resources>
+    <string name="app_name">LingoLearner</string>
+    <string name="lingolearner">LingoLearner\</string>
+    <string name="signup">SignUp\</string>
+    <string name="login">Login\</string>
+    <string name="username">UserName\</string>
+    <string name="password">Password\</string>
+    <string name="upload_image">Upload Image\</string>
+    <string name="confirm_password">Confirm Password\</string>
+    <string name="date_of_birth">Date of birth\</string>
+    <string name="already_have_account_login">Already have Account?Login\</string>
+    <string name="signupnow">SignUpNow\</string>
+    <string name="loginnow">LoginNow\</string>
+    <string name="report_bug">Report bug\</string>
+    <string name="rate_this_app">Rate this app\</string>
+    <string name="share">Share\</string>
+    <string name="communicate">Communicate\</string>
+    <string name="announcements">Announcements\</string>
+    <string name="settings">Settings\</string>
+    <string name="logout">Logout\</string>
+    <string name="todo">TODO\</string>
+    <string name="notification">Notification\</string>
+    <string name="announcement">Announcements\</string>
+    <string name="setting">Settings\</string>
+    <string name="logouts">Logout\</string>
+    <string name="menu">Menu\</string>
+    <string name="user_gmail_com">user@gmail.com\</string>
+    <string name="user_name">User Name\</string>
+    <string name="Lingolearner">LingoLearner\</string>
+    <string name="alphabets">Alphabets\</string>
+    <string name="let_s_learn_laugh_and_grow_together_at_lingolearner">Let\'s learn, laugh, and grow together at LingoLearner!</string>
+    <string name="signup_now">SignUp Now\</string>
+    <string name="login_now">Login Now\</string>
+    <string name="welcome_to_lingolearner_little_explorers">Welcome to LingoLearner, Little Explorers!</string>
+    <string name="hide_apple">Hide Apple</string>
+    <string name="reset">Reset</string>
+    <string name="start_new">New</string>
+    <string name="brush">Brush</string>
+    <string name="erase">Erase</string>
+    <string name="opacity">Opacity</string>
+    <string name="save">Save</string>
+    <string name="paint">Paint</string>
+    <string name="sml">Small</string>
+    <string name="med">Medium</string>
+    <string name="lrg">Large</string>
+    <string name="action_settings">Settings</string>
+    <string name="show_apple">Show Apple</string>
+    <string name="learn_alphabet_with_fun">Learn Alphabet with fun</string>
+    <string name="memory_game">Memory Game</string>
+    <string name="imageviw">TODO</string>
+
+
+    <string name="story_name">Three Reading</string>
+
+    <string name="title1">Twinkle Twinkle Little Stars</string>
+
+    <string name="title2">Baa Baa BlackSheep</string>
+
+    <string name="title3">Five Little Monkeys</string>
+
+    <string name="title4">The Hare and the Tortoise</string>
+
+    <string name="title5">The Thirsty Crow </string>
+
+    <string name="title6">The Ugly Duckling</string>
+
+    <string name="title7">The Fox and The Grapes</string>
+
+    <string name="title8">The Elephant and the Ants</string>
+
+
+    <string name="story1">Twinkle, twinkle, little star,
+How I wonder what you are!
+Up above the world so high,
+Like a diamond in the sky.
+
+When the blazing sun is gone,
+When he nothing shines upon,
+Then you show your little light,
+Twinkle, twinkle, all the night.
+
+Then the traveler in the dark
+Thanks you for your tiny spark,
+How could he see where to go,
+If you did not twinkle so?
+
+In the dark blue sky you keep,
+Often through my curtains peep
+For you never shut your eye,
+Till the sun is in the sky.
+
+As your bright and tiny spark
+Lights the traveler in the dark,
+Though I know not what you are,
+Twinkle, twinkle, little star.</string>
+
+    <string name="story2">Baa, baa, black sheep, have you any wool?
+
+Yes sir, yes sir, three bags full!
+
+One for the master,
+
+One for the dame,
+
+And one for the little boy
+
+Who lives down the lane
+
+
+Baa, baa, black sheep,
+
+Have you any wool?
+
+Yes sir, yes sir,
+
+Three bags full...
+
+
+Baa, baa, white sheep,
+
+have you any wool?
+
+yes sir, yes sir,
+
+three needles full.
+
+
+one to mend a jumper,
+
+one to mend a frock,
+
+and one for the little girl,
+
+with holes in her sock.
+
+
+Baa, baa, white sheep,
+
+have you any wool?
+
+yes sir, yes sir,
+
+three needles full...
+
+
+Baa, baa, grey sheep,
+
+have you any wool?
+
+yes sir yes sir ,
+
+three bags full.
+
+
+one for the kitten,
+
+one for the cats,
+
+and one for the owner,
+
+to knit some woolly hats.
+
+
+Baa, Baa, brown sheep,
+
+have you any wool?
+
+yes sir, yes sir, three bags full.
+
+
+One for the mammy ,
+
+One for the daddy
+
+and one for the little baby
+
+Who lives down the lane.
+
+
+Baa, baa, bare sheep,
+
+have you any wool?
+
+No sir, no sir, no bags full.
+
+
+None for the master,
+
+none for the dame,
+
+and none for the little boy
+
+who lives down the lane.
+
+
+Baa, baa bare sheep,
+
+have you any wool?
+
+No sir, no sir,
+
+no bags full...</string>
+
+    <string name="story3">Five little monkeys jumping on the bed
+
+One fell off and bumped his head
+
+Mama called the doctor,
+
+And the doctor said
+
+No more monkeys jumping on the bed
+
+
+Four little monkeys jumping on the bed
+
+One fell off and bumped his head
+
+Mama called the doctor
+
+And the doctor said,
+
+No more monkeys jumping on the bed
+
+
+Three little monkeys jumping on the bed
+
+One fell off and bumped his head
+
+Mama called the doctor
+
+And the doctor said,
+
+No more monkeys jumping on the bed
+
+
+Two little monkeys jumping on the bed
+
+One fell off and bumped his head
+
+Mama called the doctor
+
+And the doctor said,
+
+No more monkeys jumping on the bed
+
+
+One little monkey jumping on the bed
+
+One fell off and bumped his head
+
+Mama called the doctor
+
+And the doctor said,
+
+Put those monkeys right to bed</string>
+
+    <string name="story4">Once upon a time there was a Rabbit and a tortoise. They were good friends. They used to meet and play every day. The rabbit always boasted that he could run faster than the tortoise.
+So they decided to have a race. They chose a starting and finishing point. The rabbit ran really fast and soon left the tortoise far behind. He thought that tortoise is too slow and he
+can rest for a while. So he stooped under a tree and went to sleep. Mean while tortoise kept walking the whole time and reached the winning point. When the rabbit woke up he saw that tortoise has already won the race.
+</string>
+
+    <string name="story5">One afternoon a fox was walking through the forest and spotted a bunch of grapes hanging from over a lofty branch.
+"Just the thing to quench my thirst," he thought.
+Taking a few steps back, the fox jumped and just missed the hanging grapes. Again the fox took a few paces back and tried to reach them but still failed.
+Finally, giving up, the fox turned up his nose and said, "They're probably sour anyway," and proceeded to walk away.
+</string>
+
+    <string name="story6">Once upon a time, there lived a proud and naughty elephant in a jungle. It treated all creatures smaller than itself harshly and was very rude to them. One day, the ant family set out on their daily hunt for food. On their way, they met the elephant who had a naughty idea and decided to cause the ant family trouble.
+Suddenly, it sprayed the ants with water. The ants became very angry and one of them cried, “This is wrong! You cannot harm others like this.” The rude elephant replied, “You silly ant! I will crush you under my foot if you speak again.” The clever ant then decided to teach the elephant a lesson so that it learns to respect every creature.
+The tiny ant quietly crept inside the elephant’s trunk and started biting it. The elephant jumped and blowed its trunk to get rid of the ant but it did not stop. The big elephant kept crying in pain. Finally, it said “I am sorry. I have realised my mistake. I promise I will be good and not trouble anyone.” The ant then stopped biting it and came out. The elephant had learnt a lesson and was good to everyone thereafter. The elephant and the ant became great friends.
+    </string>
+    <string name="story7">Once there was a crow One day he was very thirsty. He flew here and there in search of water. He saw a pitcher under a tree. There was a little water in it. His beak could not reach a water. He got an idea He dropped some stones in the pitcher The water came up and he drank it. After drinking the water, he flew away happily.
+</string>
+
+    <string name="story8">It is a beautiful summer day. The sun shines warmly on an old house near a river. Behind the house a mother duck is sitting on ten eggs. "Tchick." One by one all the eggs break open.
+All except one. This one is the biggest egg of all.
+Mother duck sits and sits on the big egg. At last it breaks open, "Tchick, tchick!"
+Out jumps the last baby duck. It looks big and strong. It is grey and ugly.
+The next day mother duck takes all her little ducks to the river. She jumps into it. All her baby ducks jump in. The big ugly duckling jumps in too.
+They all swim and play together. The ugly duckling swims better than all the other ducklings.
+- Quack, quack! Come with me to the farm yard! - says mother duck to her baby ducks and they all follow her there.
+The farm yard is very noisy. The poor duckling is so unhappy there. The hens peck him, the rooster flies at him, the ducks bite him, the farmer kicks him.
+At last one day he runs away. He comes to a river. He sees many beautiful big birds swimming there. Their feathers are so white, their necks so long, their wings so pretty. The little duckling looks and looks at them. He wants to be with them. He wants to stay and watch them. He knows they are swans. Oh, how he wants to be beautiful like them.
+Now it is winter. Everything is white with snow. The river is covered with ice. The ugly duckling is very cold and unhappy.
+Spring comes once again. The sun shines warmly. Everything is fresh and green.
+One morning the ugly duckling sees the beautiful swans again. He knows them. He wants so much to swim with them in the river. But he is afraid of them. He wants to die. So he runs into the river. He looks into the water. There in the water he sees a beautiful swan. It is he! He is no more an ugly duckling. He is a beautiful white swan.
+            </string>
+
+
+    <string name="moral1">Slow and steady wins the race</string>
+    <string name="moral2">Its easy to despise what you cannot have</string>
+
+    <string name="moral3">Never underestimate and hurt anyone</string>
+    <string name="moral4">Where there is a will, there is a way</string>
+
+    <string name="moral5">You are beautiful the way you are</string>
+    <string name="navigation_drawer_open" />
+    <string name="navigation_drawer_close" />
+
+</resources>
+

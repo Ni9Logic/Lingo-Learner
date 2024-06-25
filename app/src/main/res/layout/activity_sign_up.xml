@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:fitsSystemWindows="true">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="115dp"
+            android:background="@drawable/top_background"
+            android:backgroundTint="#EEFF8C00" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign Up"
+            android:id="@+id/SignUpTxt"
+            android:textColor="#EEFF8C00"
+            android:paddingLeft="20dp"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:id="@+id/HelloUsers"
+            android:text="Hello! let's join with us"
+            android:textColor="#EEFF8C00"
+            android:paddingLeft="20dp"
+            android:textSize="20sp" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/username"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/textfield_shape"
+            android:drawableStart="@drawable/user2"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Enter your Username"
+            android:inputType="textEmailAddress|text"
+            android:padding="15dp" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/email"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/textfield_shape"
+            android:drawableStart="@drawable/email1"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Enter your Email"
+            android:inputType="textEmailAddress|text"
+            android:padding="15dp" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/textfield_shape"
+            android:drawableStart="@drawable/password"
+            android:drawableEnd="@drawable/showpassword"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:padding="15dp" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/confirmPassword"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/textfield_shape"
+            android:drawableStart="@drawable/password"
+            android:drawableEnd="@drawable/showpassword"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
+            android:padding="15dp" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/dateOfBirth"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/textfield_shape"
+            android:drawableStart="@drawable/dateofbirth"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Date of Birth (DD/MM/YYYY)"
+            android:inputType="date"
+            android:padding="15dp" />
+
+        <ProgressBar
+            android:id="@+id/pgrbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btnsignup"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/border1"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Sign Up Now"
+            android:textColor="#FFFCFC"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:backgroundTint="#EEFF8C00" />
+
+        <TextView
+            android:id="@+id/loginnow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            android:text="Already have an Account? Login"
+            android:textColor="#0B0B0B"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar1"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bottom_background"
+        android:backgroundTint="#EEFF8C00" />
+
+</RelativeLayout>

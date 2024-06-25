@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launchers"
+        android:label="@string/Lingolearner"
+        android:maxSdkVersion="32"
+        android:minSdkVersion="23"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"
+        tools:overrideLibrary="androidx.compose.ui.graphics"
+        tools:targetApi="33">
+        <activity
+            android:name=".AlphabetsList"
+            android:exported="false" />
+        <activity
+            android:name=".ResetPassword"
+            android:exported="false" />
+        <activity
+            android:name=".ReadingStory5"
+            android:exported="false" />
+        <activity
+            android:name=".ReadingStory4"
+            android:exported="false" />
+        <activity
+            android:name=".ReadingStory3"
+            android:exported="false" />
+        <activity
+            android:name=".ReadingStory2"
+            android:exported="false" />
+        <activity
+            android:name=".ReadingStory1"
+            android:exported="false" />
+        <activity
+            android:name=".ReadingPoem3"
+            android:exported="false" />
+        <activity
+            android:name=".ReadingPoem2"
+            android:exported="false" />
+        <activity
+            android:name=".ReadingPoem1"
+            android:exported="false" />
+        <activity
+            android:name=".poem1"
+            android:exported="false" />
+        <activity
+            android:name=".PrepAnimalsName"
+            android:exported="false" />
+        <activity
+            android:name=".ThreeGame"
+            android:exported="false" />
+        <activity
+            android:name=".BossAct"
+            android:exported="false" />
+        <activity
+            android:name=".Seasons"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".Weather"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".Score"
+            android:exported="false" />
+        <activity
+            android:name=".TwoWritting"
+            android:exported="false" />
+        <activity
+            android:name=".TwoStory"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".OneGrammer"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".OneVocabulary"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".NFunRhyme"
+            android:exported="false" />
+        <activity
+            android:name=".NursryGame2"
+            android:exported="false" />
+        <activity
+            android:name=".NursryGame1"
+            android:exported="false" />
+        <activity
+            android:name=".NAlphFunActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NFunActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ThreeStory"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ThreeVocabulary"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ThreeGrammar"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ThreeDrawing"
+            android:exported="false" />
+        <activity
+            android:name=".ThreeWritting"
+            android:exported="false" />
+        <activity
+            android:name=".ThreeReading"
+            android:exported="false" />
+        <activity
+            android:name=".DrawingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TwoGrammer"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".TwoListening"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".TwoCounting"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".OneMonthsname"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".TwoVocabulary"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".TwoReading"
+            android:exported="false" />
+        <activity
+            android:name=".OneMonths"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".OneWeekdays"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".OneBodyParts"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".OneWritting"
+            android:exported="false" />
+        <activity
+            android:name=".OneBirdsName"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".OneCounting"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".PrepPhonics"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".PrepRhythm"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".PrepFruitsName"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".PrepVegName"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".PrepCounting"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".PrepAlphabets"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".NurseryPhonics"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".NurseryShapes"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".NurseryColors"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".NurseryCounting"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".NurseryAlphabets"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ClassThree"
+            android:exported="false" />
+        <activity
+            android:name=".ClassTwo"
+            android:exported="false" />
+        <activity
+            android:name=".ClassOne"
+            android:exported="false" />
+        <activity
+            android:name=".PrepClass"
+            android:exported="false" />
+        <activity
+            android:name=".NurseryClass"
+            android:exported="false" />
+        <activity
+            android:name=".Home"
+            android:exported="false" />
+        <activity
+            android:name=".SignUp"
+            android:exported="true" />
+        <activity
+            android:name=".Login"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".SplashScreen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

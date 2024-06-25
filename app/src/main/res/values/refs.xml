@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <drawable name="birthimg_24dp" />
+    <drawable name="ic_launcher_foreground" />
+    <drawable name="backgroundeditview" />
+    <drawable name="letter_template" />
+    <drawable name="anchor" />
+</resources>

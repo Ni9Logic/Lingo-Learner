@@ -1,0 +1,31 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#E8FF8C00</item>
+        <item name="colorPrimaryDark">#CF943B</item>
+        <item name="colorAccent">#E8FF8C00</item>
+        <item name="statusBarBackground">#E8FF8C00</item>
+    </style>
+
+    <style name="myAppTheme." parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#E8FF8C00</item>
+        <item name="colorPrimaryDark">#CF943B</item>
+        <item name="colorAccent">#E8FF8C00</item>
+        <item name="windowActionBar">true</item>
+        <item name="windowNoTitle">true</item>
+
+        <item name="windowActionBarOverlay">true</item>
+
+    </style>
+<style name="Theme.AppCompat.Light.NoActionBar.FullScreen" parent="@style/Theme.AppCompat.Light.NoActionBar">
+    <item name="android:windowNoTitle">true</item>
+    <item name="android:windowFullscreen">true</item>
+    <item name="android:windowActionBar">false</item>
+    <item name="android:windowContentOverlay">@null</item>
+
+
+</style>
+</resources>
