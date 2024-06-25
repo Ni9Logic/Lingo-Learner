@@ -1,37 +1,26 @@
 {
   "project_info": {
-    "project_number": "762922442786",
-    "firebase_url": "https://lingolearner-7f657-default-rtdb.firebaseio.com",
-    "project_id": "lingolearner-7f657",
-    "storage_bucket": "lingolearner-7f657.appspot.com"
+    "project_number": "775900308644",
+    "project_id": "lingolearner-83753",
+    "storage_bucket": "lingolearner-83753.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:762922442786:android:92bc8fd53f2918444a6a7b",
+        "mobilesdk_app_id": "1:775900308644:android:24465c5cbd9ad67a8f3231",
         "android_client_info": {
           "package_name": "com.example.LingoLearner"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "762922442786-igm2ad3g2gqv039sm457a9s80du6l0nq.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyB6z6k2_q6ezRuaL5kEjaRTKIlYKT1_iWU"
+          "current_key": "AIzaSyCXwyq5KgRFKBTGFsErtF5FAQHxC79lNlE"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "762922442786-igm2ad3g2gqv039sm457a9s80du6l0nq.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }
