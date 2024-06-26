@@ -30,7 +30,7 @@
              android:layout_marginTop="25dp">
 
             <ImageButton
-                android:id="@+id/buttonDrawerToggle"
+                android:id="@+id/buttonDrawerToggleAdmin"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:background="@android:color/transparent"
@@ -41,7 +41,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
-                android:layout_toRightOf="@id/buttonDrawerToggle"
+                android:layout_toRightOf="@id/buttonDrawerToggleAdmin"
                 android:text="LingoLearner"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
@@ -49,10 +49,10 @@
 
 
             <androidx.appcompat.widget.SearchView
-                android:id="@+id/searchView"
+                android:id="@+id/searchViewAdmin"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:layout_below="@id/buttonDrawerToggle"
+                android:layout_below="@id/buttonDrawerToggleAdmin"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
@@ -63,10 +63,10 @@
                 android:padding="10dp" />
 
             <ListView
-                android:id="@+id/listView"
+                android:id="@+id/listViewAdmin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/searchView"
+                android:layout_below="@id/searchViewAdmin"
                 android:visibility="gone" />
 
 

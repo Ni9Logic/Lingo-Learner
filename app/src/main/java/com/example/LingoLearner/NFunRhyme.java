@@ -25,7 +25,7 @@ public class NFunRhyme extends AppCompatActivity {
         //          list.setBackgroundColor(getColor());
 //        }
 
-        list = findViewById(R.id.listView);
+        list = findViewById(R.id.listViewAdmin);
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this,
                 androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, s);
         list.setAdapter(arrayAdapter);

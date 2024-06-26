@@ -33,7 +33,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class AdminPanel extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
@@ -58,7 +58,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_ac_admin);
 
         auth = FirebaseAuth.getInstance();
         ActionBar actionBar = getSupportActionBar();
@@ -70,8 +70,9 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
         );
 
-        drawerLayout = findViewById(R.id.drawerlayout);
-        navigationView = findViewById(R.id.navigationview);
+
+        drawerLayout = findViewById(R.id.drawerlayoutAdmin);
+        navigationView = findViewById(R.id.navigationviewAdmin);
         buttonDrawerToggle = findViewById(R.id.buttonDrawerToggleAdmin);
         nurseryCard = findViewById(R.id.nurseryCard);
         prepCard = findViewById(R.id.prepCard);
@@ -145,7 +146,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                     Intent intent = null;
                     switch (selectedItem) {
                         case "Counting":
-                            intent = new Intent(Home.this, NurseryCounting.class);
+                            intent = new Intent(AdminPanel.this, NurseryCounting.class);
                             break;
                         // Add more cases for other items as needed
                     }
@@ -154,7 +155,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                     }
                 }
                 // Handle item click action here, e.g., display a toast
-                Toast.makeText(Home.this, "Selected: " + selectedItem, Toast.LENGTH_SHORT).show();
+                Toast.makeText(AdminPanel.this, "Selected: " + selectedItem, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -166,27 +167,27 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         });
 
         nurseryCard.setOnClickListener(v -> {
-            Intent intent = new Intent(Home.this, NurseryClass.class);
+            Intent intent = new Intent(AdminPanel.this, NurseryClass.class);
             startActivity(intent);
         });
 
         prepCard.setOnClickListener(v -> {
-            Intent intent = new Intent(Home.this, PrepClass.class);
+            Intent intent = new Intent(AdminPanel.this, PrepClass.class);
             startActivity(intent);
         });
 
         oneCard.setOnClickListener(v -> {
-            Intent intent = new Intent(Home.this, ClassOne.class);
+            Intent intent = new Intent(AdminPanel.this, ClassOne.class);
             startActivity(intent);
         });
 
         twoCard.setOnClickListener(v -> {
-            Intent intent = new Intent(Home.this, ClassTwo.class);
+            Intent intent = new Intent(AdminPanel.this, ClassTwo.class);
             startActivity(intent);
         });
 
         threeCard.setOnClickListener(v -> {
-            Intent intent = new Intent(Home.this, ClassThree.class);
+            Intent intent = new Intent(AdminPanel.this, ClassThree.class);
             startActivity(intent);
         });
 
@@ -227,7 +228,8 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.home) {
-            Toast.makeText(this, "Home Clicked", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(AdminPanel.this, Home.class);
+            startActivity(intent);
         } else if (id == R.id.action_announcement) {
             Toast.makeText(this, "Announcements Clicked", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.action_setting) {
@@ -236,10 +238,8 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
             auth.signOut();
             startActivity(new Intent(this, MainActivity.class));
             finish();
-        }
-        else if (id == R.id.admin_panel){
-            Intent intent = new Intent(Home.this, AdminPanel.class);
-            startActivity(intent);
+        } else if (id == R.id.admin_panel) {
+            Toast.makeText(this, "Admin Panel Clicked", Toast.LENGTH_SHORT).show();
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
@@ -268,7 +268,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
 
                 @Override
                 public void onCancelled(@NonNull DatabaseError databaseError) {
-                    Toast.makeText(Home.this, "Failed to load user data.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AdminPanel.this, "Failed to load user data.", Toast.LENGTH_SHORT).show();
                     Log.e("HomeActivity", "DatabaseError: " + databaseError.getMessage());
                 }
             });

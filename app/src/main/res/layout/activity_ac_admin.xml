@@ -2,17 +2,17 @@
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/drawerlayout"
+    android:id="@+id/drawerlayoutAdmin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Home"
     tools:openDrawer="start">
 
-    <include layout="@layout/activity_main_content" />
+    <include layout="@layout/activity_admin" />
 
 
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/navigationview"
+        android:id="@+id/navigationviewAdmin"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
