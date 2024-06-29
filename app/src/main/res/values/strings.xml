@@ -297,6 +297,14 @@ One morning the ugly duckling sees the beautiful swans again. He knows them. He 
     <string name="moral5">You are beautiful the way you are</string>
     <string name="navigation_drawer_open" />
     <string name="navigation_drawer_close" />
+    <string name="user_1">User 1</string>
+    <string name="mutate_users">Mutate Users</string>
+    <string name="edit_user_information">Edit User Information</string>
+    <string name="email">Email</string>
+    <string name="dob">DOB</string>
+    <string name="username1">Username</string>
+    <string name="password1">Password</string>
+    <string name="delete">Delete</string>
 
 </resources>
 

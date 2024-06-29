@@ -40,16 +40,12 @@ public class AdminPanel extends AppCompatActivity implements NavigationView.OnNa
     ImageButton buttonDrawerToggle;
     FirebaseAuth auth;
 
-    ImageView nurseryCard;
-    ImageView prepCard;
-    ImageView oneCard;
-    ImageView twoCard;
-    ImageView threeCard;
+    ImageView mutateUserCard;
+
 
     SearchView searchView;
     ListView listView;
     ArrayAdapter<String> adapter;
-    List<String> dataList;
 
     private boolean isAlphabetActivitiesHighlighted = false;
     private boolean isCountingActivitiesHighlighted = false;
@@ -74,43 +70,13 @@ public class AdminPanel extends AppCompatActivity implements NavigationView.OnNa
         drawerLayout = findViewById(R.id.drawerlayoutAdmin);
         navigationView = findViewById(R.id.navigationviewAdmin);
         buttonDrawerToggle = findViewById(R.id.buttonDrawerToggleAdmin);
-        nurseryCard = findViewById(R.id.nurseryCard);
-        prepCard = findViewById(R.id.prepCard);
-        oneCard = findViewById(R.id.oneCard);
-        twoCard = findViewById(R.id.twoCard);
-        threeCard = findViewById(R.id.threeCard);
+        mutateUserCard = findViewById(R.id.mutateUsersCards);
+
 
         searchView = findViewById(R.id.searchViewAdmin);
         listView = findViewById(R.id.listViewAdmin);
 
-        dataList = new ArrayList<>();
-        dataList.add("Animals Name");
-        dataList.add("Alphabet");
-        dataList.add("Birds Name");
-        dataList.add("Colors");
-        dataList.add("Counting");
-        dataList.add("Fruits Name");
-        dataList.add("Fun Activity");
-        dataList.add("Grammar");
-        dataList.add("Vocabulary");
-        dataList.add("Vegetables Name");
-        dataList.add("Parts of Body");
-        dataList.add("Weekdays");
-        dataList.add("Months");
-        dataList.add("Four Seasons");
-        dataList.add("Weather");
-        dataList.add("Listening");
-        dataList.add("Phonic");
-        dataList.add("Reading");
-        dataList.add("Rhythms");
-        dataList.add("Shapes");
-        dataList.add("Short Stories");
-        dataList.add("Games");
-        dataList.add("Writing");
-        dataList.add("Drawing");
 
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, dataList);
-        listView.setAdapter(adapter);
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -166,30 +132,11 @@ public class AdminPanel extends AppCompatActivity implements NavigationView.OnNa
             }
         });
 
-        nurseryCard.setOnClickListener(v -> {
-            Intent intent = new Intent(AdminPanel.this, NurseryClass.class);
+        mutateUserCard.setOnClickListener(v -> {
+            Intent intent = new Intent(AdminPanel.this, MutateUsersClass.class);
             startActivity(intent);
         });
 
-        prepCard.setOnClickListener(v -> {
-            Intent intent = new Intent(AdminPanel.this, PrepClass.class);
-            startActivity(intent);
-        });
-
-        oneCard.setOnClickListener(v -> {
-            Intent intent = new Intent(AdminPanel.this, ClassOne.class);
-            startActivity(intent);
-        });
-
-        twoCard.setOnClickListener(v -> {
-            Intent intent = new Intent(AdminPanel.this, ClassTwo.class);
-            startActivity(intent);
-        });
-
-        threeCard.setOnClickListener(v -> {
-            Intent intent = new Intent(AdminPanel.this, ClassThree.class);
-            startActivity(intent);
-        });
 
         navigationView.setNavigationItemSelectedListener(this);
         updateNavigationHeaderFromDatabase();
@@ -311,45 +258,29 @@ public class AdminPanel extends AppCompatActivity implements NavigationView.OnNa
     private void updateHighlightState() {
         // Update the UI to reflect the highlight state of alphabet-related activities
         if (isAlphabetActivitiesHighlighted) {
-            nurseryCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
-            prepCard.setBackgroundColor(getResources().getColor(R.color.another_highlight_color));
-            nurseryCard.setAlpha(0.5f);
-            prepCard.setAlpha(0.5f);
+            mutateUserCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
+            mutateUserCard.setAlpha(0.5f);
         } else {
-            nurseryCard.setBackgroundColor(getResources().getColor(android.R.color.transparent));
-            prepCard.setBackgroundColor(getResources().getColor(android.R.color.transparent));
-            nurseryCard.setAlpha(1.0f);
-            prepCard.setAlpha(1.0f);
+            mutateUserCard.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+            mutateUserCard.setAlpha(1.0f);
         }
 
         // Update the UI to reflect the highlight state of counting-related activities
         if (isCountingActivitiesHighlighted) {
-            nurseryCard.setBackgroundColor(getResources().getColor(R.color.counting_highlight_color));
-            prepCard.setBackgroundColor(getResources().getColor(R.color.another_counting_highlight_color));
-            oneCard.setBackgroundColor(getResources().getColor(R.color.yet_another_counting_highlight_color));
-            nurseryCard.setAlpha(0.5f);
-            prepCard.setAlpha(0.5f);
-            oneCard.setAlpha(0.5f);
+            mutateUserCard.setBackgroundColor(getResources().getColor(R.color.counting_highlight_color));
+            mutateUserCard.setAlpha(0.5f);
         } else {
-            nurseryCard.setBackgroundColor(getResources().getColor(android.R.color.transparent));
-            prepCard.setBackgroundColor(getResources().getColor(android.R.color.transparent));
-            oneCard.setBackgroundColor(getResources().getColor(android.R.color.transparent));
-            nurseryCard.setAlpha(1.0f);
-            prepCard.setAlpha(1.0f);
-            oneCard.setAlpha(1.0f);
+            mutateUserCard.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+            mutateUserCard.setAlpha(1.0f);
         }
 
         // Update the UI to reflect the highlight state of phonics-related activities
         if (isPhonicsActivitiesHighlighted) {
-            nurseryCard.setBackgroundColor(getResources().getColor(R.color.phonics_highlight_color));
-            prepCard.setBackgroundColor(getResources().getColor(R.color.another_phonics_highlight_color));
-            nurseryCard.setAlpha(0.5f);
-            prepCard.setAlpha(0.5f);
+            mutateUserCard.setBackgroundColor(getResources().getColor(R.color.phonics_highlight_color));
+            mutateUserCard.setAlpha(0.5f);
         } else {
-            nurseryCard.setBackgroundColor(getResources().getColor(android.R.color.transparent));
-            prepCard.setBackgroundColor(getResources().getColor(android.R.color.transparent));
-            nurseryCard.setAlpha(1.0f);
-            prepCard.setAlpha(1.0f);
+            mutateUserCard.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+            mutateUserCard.setAlpha(1.0f);
         }
 
     }
