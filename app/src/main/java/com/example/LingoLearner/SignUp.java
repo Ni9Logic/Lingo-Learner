@@ -239,14 +239,9 @@ public class SignUp extends AppCompatActivity {
         usernameRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (dataSnapshot.exists()) {
-                    // Username is already taken
-                    progressbar.setVisibility(View.GONE);
-                    Toast.makeText(SignUp.this, "Username is already taken", Toast.LENGTH_SHORT).show();
-                } else {
+
                     // Username is available, proceed with sign up
                     createUserWithEmailAndPassword(email, password, username, dateOfBirth);
-                }
             }
 
             @Override

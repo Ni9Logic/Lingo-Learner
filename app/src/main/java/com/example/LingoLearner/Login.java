@@ -61,15 +61,14 @@ public class Login extends AppCompatActivity {
         signupNow = findViewById(R.id.signupnow);
         loginNow = findViewById(R.id.btn_loginnow);
         forgetPassword = findViewById(R.id.forgotpassword);
-        welcome= findViewById(R.id.WelcomebackTxt);
-        heytxt= findViewById(R.id.Heytxt);
+        welcome = findViewById(R.id.WelcomebackTxt);
+        heytxt = findViewById(R.id.Heytxt);
 
         // Load the animations
         Animation fliprotateAnimation = AnimationUtils.loadAnimation(this, R.anim.fliprotateanim);
 
         // Apply an animation to the TextView
         welcome.startAnimation(fliprotateAnimation);
-
 
 
         // Start the text animation
@@ -134,11 +133,11 @@ public class Login extends AppCompatActivity {
     }
 
     private void loginUser() {
-//        String email = editTextUsernameEmail.getText().toString().trim();
-//        String password = editTextPassword.getText().toString().trim();
+        String email = editTextUsernameEmail.getText().toString().trim();
+        String password = editTextPassword.getText().toString().trim();
 
-        String email = "rehmanhassan117@gmail.com";
-        String password = "HASsan@4r";
+//        String email = "rehmanhassan117@gmail.com";
+//        String password = "HASsan@4r";
         if (TextUtils.isEmpty(email)) {
 
             Toast.makeText(this, "Enter Email", Toast.LENGTH_SHORT).show();
@@ -178,7 +177,6 @@ public class Login extends AppCompatActivity {
     }
 
 
-
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -191,6 +189,7 @@ public class Login extends AppCompatActivity {
             }
         }
     }
+
     private void startTextAnimation(String text) {
         heytxt.setText("");  // Clear the TextView before starting the animation
 
