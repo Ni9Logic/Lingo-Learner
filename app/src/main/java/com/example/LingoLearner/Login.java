@@ -133,11 +133,11 @@ public class Login extends AppCompatActivity {
     }
 
     private void loginUser() {
-        String email = editTextUsernameEmail.getText().toString().trim();
-        String password = editTextPassword.getText().toString().trim();
+//        String email = editTextUsernameEmail.getText().toString().trim();
+//        String password = editTextPassword.getText().toString().trim();
 
-//        String email = "rehmanhassan117@gmail.com";
-//        String password = "HASsan@4r";
+        String email = "rehmanhassan117@gmail.com";
+        String password = "HASsan@4r";
         if (TextUtils.isEmpty(email)) {
 
             Toast.makeText(this, "Enter Email", Toast.LENGTH_SHORT).show();

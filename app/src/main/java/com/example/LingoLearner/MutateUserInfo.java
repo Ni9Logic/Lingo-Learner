@@ -27,8 +27,7 @@ public class MutateUserInfo extends AppCompatActivity {
 
     private EditText userInfoPassword;
     private EditText userInfoUsername;
-    private Button userInfoUpdateBtn;
-    private Button userInfoDeleteBtn;
+    private EditText userInfoRole;
 
     private String OldUsername;
 
@@ -44,8 +43,9 @@ public class MutateUserInfo extends AppCompatActivity {
         userInfoDOB = findViewById(R.id.userInfoDOB);
         userInfoUsername = findViewById(R.id.userInfoUsername);
         userInfoPassword = findViewById(R.id.userInfoPassword);
-        userInfoUpdateBtn = findViewById(R.id.userInfoUpdateBtn);
-        userInfoDeleteBtn = findViewById(R.id.userInfoDeleteBtn);
+        userInfoRole = findViewById(R.id.userInfoRole);
+        Button userInfoUpdateBtn = findViewById(R.id.userInfoUpdateBtn);
+        Button userInfoDeleteBtn = findViewById(R.id.userInfoDeleteBtn);
         userInfoUpdateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,9 +53,10 @@ public class MutateUserInfo extends AppCompatActivity {
                 String newDOB = userInfoDOB.getText().toString();
                 String newUsername = userInfoUsername.getText().toString();
                 String newPassword = userInfoPassword.getText().toString();
+                String newUserRole = userInfoRole.getText().toString();
 
                 // Update the user's information in the database
-                updateUserInfoInDatabase(newEmail, newDOB, newUsername, newPassword);
+                updateUserInfoInDatabase(newEmail, newDOB, newUsername, newPassword, newUserRole);
             }
         });
 
@@ -89,6 +90,7 @@ public class MutateUserInfo extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
                     String userUsername = userSnapshot.child("username").getValue(String.class);
+                    assert userUsername != null;
                     if (userUsername.equals(username)) {
                         userSnapshot.getRef().removeValue();
                         Toast.makeText(MutateUserInfo.this, "User Deleted!", Toast.LENGTH_SHORT).show();
@@ -136,18 +138,20 @@ public class MutateUserInfo extends AppCompatActivity {
         });
     }
 
-    private void updateUserInfoInDatabase(String newEmail, String newDOB, String newUsername, String newPassword) {
+    private void updateUserInfoInDatabase(String newEmail, String newDOB, String newUsername, String newPassword, String newUserRole) {
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
         mDatabase.child("Users").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
                     String userUsername = userSnapshot.child("username").getValue(String.class);
+                    assert userUsername != null;
                     if (userUsername.equals(OldUsername)) {
                         userSnapshot.getRef().child("email").setValue(newEmail);
                         userSnapshot.getRef().child("dateOfBirth").setValue(newDOB);
                         userSnapshot.getRef().child("password").setValue(newPassword);
                         userSnapshot.getRef().child("username").setValue(newUsername);
+                        userSnapshot.getRef().child("Role").setValue(newUserRole);
                         Toast.makeText(MutateUserInfo.this, "User Information Updated!", Toast.LENGTH_SHORT).show();
                         break;
                     }

@@ -305,6 +305,9 @@ One morning the ugly duckling sees the beautiful swans again. He knows them. He 
     <string name="username1">Username</string>
     <string name="password1">Password</string>
     <string name="delete">Delete</string>
+    <string name="user_report_summary">User Report Summary</string>
+    <string name="user_role">User Role</string>
+    <string name="settings_1">Settings</string>
 
 </resources>
 

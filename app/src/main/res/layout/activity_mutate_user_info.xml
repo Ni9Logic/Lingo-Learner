@@ -40,25 +40,18 @@
                     android:textStyle="bold" />
             </RelativeLayout>
 
-            <RelativeLayout
+            <EditText
+                android:id="@+id/userInfoEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="100dp">
-
-                <EditText
-                    android:id="@+id/userInfoEmail"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:autofillHints="true"
-                    android:ems="10"
-                    android:enabled="true"
-                    android:inputType="textEmailAddress"
-                    android:singleLine="true"
-                    android:text="@string/email"
-                    tools:ignore="LabelFor" />
-
-
-            </RelativeLayout>
+                android:autofillHints="true"
+                android:ems="10"
+                android:enabled="true"
+                android:inputType="textEmailAddress"
+                android:paddingTop="100dp"
+                android:singleLine="true"
+                android:text="@string/email"
+                tools:ignore="LabelFor" />
 
             <EditText
                 android:id="@+id/userInfoDOB"
@@ -93,6 +86,19 @@
                 android:singleLine="true"
                 android:text="@string/password1"
                 tools:ignore="LabelFor,TextFields" />
+            <EditText
+                android:id="@+id/userInfoRole"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="true"
+                android:ems="10"
+                android:enabled="true"
+                android:inputType="text"
+                android:singleLine="true"
+                android:text="@string/user_role"
+                tools:ignore="LabelFor,TextFields" />
+
+
 
             <Button
                 android:id="@+id/userInfoUpdateBtn"
@@ -107,7 +113,10 @@
                 android:background="#E32323"
                 android:text="@string/delete"
                 android:textColor="#FFFDFD" />
+
+
         </LinearLayout>
+
 
     </ScrollView>
 
