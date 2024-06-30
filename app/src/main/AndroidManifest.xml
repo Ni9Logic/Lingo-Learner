@@ -270,6 +270,7 @@
         <activity android:name=".AdminSettings" />
         <activity android:name=".AdminSendAnnouncements" />
         <activity android:name=".AdminGenerateReportUsers" />
+        <activity android:name=".Admin_User_Report" />
 
         <meta-data
             android:name="preloaded_fonts"

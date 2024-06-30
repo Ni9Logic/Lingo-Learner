@@ -1,8 +1,10 @@
 package com.example.LingoLearner;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,7 +30,6 @@ public class AdminGenerateReportUsers extends AppCompatActivity {
         setContentView(R.layout.activity_generate_report_users);
 
         usersLayout = findViewById(R.id.activity_generate_reports);
-        TrackActivities.trackActivity("Generate_Report");
         // Retrieve the list of users from the database
         fetchUsers();
     }
@@ -86,6 +87,18 @@ public class AdminGenerateReportUsers extends AppCompatActivity {
         params.topMargin = 10;
         params.bottomMargin = 10;
         cardView.setLayoutParams(params);
+        // Add an OnClickListener to the CardView
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Handle the click event here
+                Toast.makeText(AdminGenerateReportUsers.this, "Card clicked: " + email, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(AdminGenerateReportUsers.this, Admin_User_Report.class);
+                intent.putExtra("email", email);
+                startActivity(intent);
+            }
+        });
+
         usersLayout.addView(cardView);
     }
 }
