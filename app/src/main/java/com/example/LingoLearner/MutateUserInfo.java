@@ -120,11 +120,15 @@ public class MutateUserInfo extends AppCompatActivity {
                         String userEmail = userSnapshot.child("email").getValue(String.class);
                         String userDOB = userSnapshot.child("dateOfBirth").getValue(String.class);
                         String userPassword = userSnapshot.child("password").getValue(String.class);
+                        String userRole = userSnapshot.child("Role").getValue(String.class);
                         // Display the user's email in the EditText
                         userInfoEmail.setText(userEmail);
                         userInfoDOB.setText(userDOB);
                         userInfoPassword.setText(userPassword);
                         userInfoUsername.setText(username);
+                        assert userRole != null;
+                        if (userRole.length() > 0)
+                            userInfoRole.setText(userRole);
                         break;
                     }
                 }

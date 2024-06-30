@@ -32,6 +32,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -236,10 +237,44 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
             auth.signOut();
             startActivity(new Intent(this, MainActivity.class));
             finish();
-        }
-        else if (id == R.id.admin_panel){
-            Intent intent = new Intent(Home.this, AdminPanel.class);
-            startActivity(intent);
+        } else if (id == R.id.admin_panel) {
+            // Check if user is an admin
+            FirebaseUser user = auth.getCurrentUser();
+            if (user != null) {
+                final String userEmail = user.getEmail();
+                DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
+                ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        boolean isAdmin = false;
+                        System.out.println("I am Here");
+                        for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
+                            String userEmailFromDB = userSnapshot.child("email").getValue(String.class);
+                            if (userEmailFromDB != null && userEmailFromDB.equals(userEmail)) {
+                                String UserRole = userSnapshot.child("Role").getValue(String.class);
+                                assert UserRole != null;
+                                if (UserRole.equals("Admin")) {
+                                    isAdmin = true;
+                                    break;
+                                }
+                            }
+                        }
+                        if (isAdmin) {
+                            Intent intent = new Intent(Home.this, AdminPanel.class);
+                            startActivity(intent);
+                        } else {
+                            Toast.makeText(Home.this, "You are not an administrator", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                        Log.w("Error", "Error getting user role", databaseError.toException());
+                    }
+                });
+            } else {
+                Toast.makeText(Home.this, "You are not logged in", Toast.LENGTH_SHORT).show();
+            }
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
