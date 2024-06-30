@@ -21,6 +21,7 @@ public class ThreeVocabulary extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_three_vocabulary);
+        TrackActivities.trackActivity("Vocabulary Activity");
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {

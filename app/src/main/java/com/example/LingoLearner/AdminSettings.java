@@ -18,6 +18,7 @@ public class AdminSettings extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_settings);
+        TrackActivities.trackActivity("Visit Admin Settings");
 
         createAnnouncements = findViewById(R.id.Create_Announcement);
         generateReports = findViewById(R.id.activity_Admin_Generate_Reports);

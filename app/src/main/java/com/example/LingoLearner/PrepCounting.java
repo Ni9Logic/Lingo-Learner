@@ -21,6 +21,7 @@ public class PrepCounting extends AppCompatActivity{
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_nursery_alphabets);
+        TrackActivities.trackActivity("Counting Activity");
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {

@@ -28,7 +28,7 @@ public class NursryGame2 extends AppCompatActivity implements View.OnClickListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nursry_game2);
-
+        TrackActivities.trackActivity("Nursery Game 2 Activity");
         opt1 = findViewById(R.id.opt1);
         opt2 = findViewById(R.id.opt2);
         opt3 = findViewById(R.id.opt3);

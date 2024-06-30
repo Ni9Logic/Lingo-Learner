@@ -18,6 +18,7 @@ public class BrushView extends View {
 
     public BrushView(Context context) {
         super(context);
+        TrackActivities.trackActivity("Brush View Activity");
         brush.setAntiAlias(true);
         brush.setColor(Color.BLUE);
         brush.setStyle(Paint.Style.STROKE);

@@ -22,6 +22,7 @@ public class TwoGrammer extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_two_grammer);
+        TrackActivities.trackActivity("Grammar Activity");
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {

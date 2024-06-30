@@ -56,6 +56,7 @@ public class AdminPanel extends AppCompatActivity implements NavigationView.OnNa
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ac_admin);
+        TrackActivities.trackActivity("Visit Admin Panel");
 
         auth = FirebaseAuth.getInstance();
         ActionBar actionBar = getSupportActionBar();

@@ -17,7 +17,7 @@ public class NurseryPhonics extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nursery_phonics);
-
+        TrackActivities.trackActivity("Nursery Phonics Activity");
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.hide();

@@ -230,6 +230,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         if (id == R.id.home) {
             Toast.makeText(this, "Home Clicked", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.action_announcement) {
+            TrackActivities.trackActivity("View Announcements Activity");
             Toast.makeText(this, "Announcements Clicked", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(Home.this, UserAnnouncements.class);
             startActivity(intent);

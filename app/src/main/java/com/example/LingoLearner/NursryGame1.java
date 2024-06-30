@@ -22,7 +22,7 @@ public class NursryGame1 extends AppCompatActivity implements View.OnClickListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nursry_game1);
-
+        TrackActivities.trackActivity("Nursery Game 1 Activity");
         text = findViewById(R.id.game1_text);
         btn1 = findViewById(R.id.btn1);
         btn2 = findViewById(R.id.btn2);

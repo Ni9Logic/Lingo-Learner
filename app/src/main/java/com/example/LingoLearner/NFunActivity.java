@@ -15,7 +15,7 @@ public class NFunActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nfun);
-
+        TrackActivities.trackActivity("Fun Activity");
         alphabet = findViewById(R.id.alphabet);
         game1 = findViewById(R.id.game1);
         game2 = findViewById(R.id.game2);

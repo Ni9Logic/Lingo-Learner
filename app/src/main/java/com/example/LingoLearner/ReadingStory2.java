@@ -1,5 +1,6 @@
 package com.example.LingoLearner;
 
+import android.annotation.SuppressLint;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -14,10 +15,12 @@ public class ReadingStory2 extends AppCompatActivity {
     private Button btnPrevious, btnPlay, btnNext;
     private MediaPlayer mediaPlayer;
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reading_story2);
+        TrackActivities.trackActivity("Reading Story 2 Activity");
 
         // Initialize buttons
         btnPrevious = findViewById(R.id.btnPrevious);

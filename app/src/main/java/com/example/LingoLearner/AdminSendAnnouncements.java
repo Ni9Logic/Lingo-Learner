@@ -31,6 +31,8 @@ public class AdminSendAnnouncements extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_send_announcement);
+        TrackActivities.trackActivity("Create Announcements");
+
 
         sendAnnouncementBtn = findViewById(R.id.SendAnnouncementBtn);
         sendAnnouncementText = findViewById(R.id.sendAnnouncementText);

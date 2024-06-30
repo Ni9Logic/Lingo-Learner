@@ -17,7 +17,7 @@ public class NurseryColors extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nursery_colors);
-
+        TrackActivities.trackActivity("Nursery Colors Activity");
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.hide();

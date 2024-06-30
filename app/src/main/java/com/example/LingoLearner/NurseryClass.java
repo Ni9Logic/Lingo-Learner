@@ -21,7 +21,7 @@ public class NurseryClass extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nursery_class);
-
+        TrackActivities.trackActivity("Nursery Class Activity");
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.hide();

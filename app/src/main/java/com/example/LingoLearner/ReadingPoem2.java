@@ -25,6 +25,7 @@ public class ReadingPoem2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reading_poem2);
+        TrackActivities.trackActivity("Reading Poem 2 Activity");
 
         // Initialize ImageButtons
         btnPrevious = findViewById(R.id.btnPrevious);

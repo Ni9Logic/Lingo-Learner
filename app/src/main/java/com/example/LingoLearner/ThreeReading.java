@@ -22,6 +22,7 @@ public class ThreeReading extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_three_reading);
+        TrackActivities.trackActivity("Reading Activity");
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {

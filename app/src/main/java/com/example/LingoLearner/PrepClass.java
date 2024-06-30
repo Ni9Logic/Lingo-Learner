@@ -24,6 +24,7 @@ public class PrepClass extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prep_class);
+        TrackActivities.trackActivity("Prep Class Activity");
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {

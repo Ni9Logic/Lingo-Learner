@@ -21,6 +21,7 @@ public class NAlphFunActivity extends AppCompatActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nalph_fun);
+        TrackActivities.trackActivity("Fun Activity");
 
         previous = findViewById(R.id.previous);
         refresh = findViewById(R.id.refresh);

@@ -17,7 +17,7 @@ public class NurseryShapes extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nursery_shapes);
-
+        TrackActivities.trackActivity("Nursery Shapes Activity");
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.hide();

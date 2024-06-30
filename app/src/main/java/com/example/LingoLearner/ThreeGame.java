@@ -34,6 +34,7 @@ public class ThreeGame extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_three_game);
+        TrackActivities.trackActivity("Fun Activity");
 
         imageViewAnimal = findViewById(R.id.imageViewCat);
         editTextGuess = findViewById(R.id.editTextGuess);

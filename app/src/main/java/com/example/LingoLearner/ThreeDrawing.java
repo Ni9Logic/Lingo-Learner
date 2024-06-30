@@ -45,6 +45,7 @@ public class ThreeDrawing extends Activity implements OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_three_drawing);
+        TrackActivities.trackActivity("Drawing Activity");
 
         if (Build.VERSION.SDK_INT >= 23) {
             if (checkPermission()) {

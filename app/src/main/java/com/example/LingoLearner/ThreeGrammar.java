@@ -22,6 +22,7 @@ public class ThreeGrammar extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_three_grammar);
+        TrackActivities.trackActivity("Grammar Activity");
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {

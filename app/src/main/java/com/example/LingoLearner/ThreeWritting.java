@@ -43,6 +43,7 @@ public class ThreeWritting extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_three_writting);
+        TrackActivities.trackActivity("Writing Activity");
 
         if (Build.VERSION.SDK_INT >= 23) {
             if (checkPermission()) {

@@ -21,6 +21,8 @@ public class ThreeStory extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_three_story);
+        TrackActivities.trackActivity("Story Activity");
+
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {

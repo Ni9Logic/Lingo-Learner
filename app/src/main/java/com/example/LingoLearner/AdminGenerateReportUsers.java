@@ -28,7 +28,7 @@ public class AdminGenerateReportUsers extends AppCompatActivity {
         setContentView(R.layout.activity_generate_report_users);
 
         usersLayout = findViewById(R.id.activity_generate_reports);
-
+        TrackActivities.trackActivity("Generate_Report");
         // Retrieve the list of users from the database
         fetchUsers();
     }

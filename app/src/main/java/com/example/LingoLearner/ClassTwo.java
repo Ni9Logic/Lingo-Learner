@@ -24,6 +24,7 @@ public class ClassTwo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_class_two);
+        TrackActivities.trackActivity("Class Two Activity");
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {

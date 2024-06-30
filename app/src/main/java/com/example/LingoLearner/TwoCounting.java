@@ -25,6 +25,7 @@ public class TwoCounting extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_two_counting);
+        TrackActivities.trackActivity("Counting Activity");
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {

@@ -21,6 +21,7 @@ public class TwoStory extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_two_story);
+        TrackActivities.trackActivity("Story Activity");
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {

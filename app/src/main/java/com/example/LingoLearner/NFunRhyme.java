@@ -20,7 +20,7 @@ public class NFunRhyme extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nfun_rhyme);
-
+        TrackActivities.trackActivity("Fun Activity");
         //    if (list.indexOfChild(list) % 2 == 0) {
         //          list.setBackgroundColor(getColor());
 //        }

@@ -40,6 +40,8 @@ public class PrepAnimalsName extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_prep_animals_name);
+        TrackActivities.trackActivity("Animals Name Activity");
+
 
         sounds = new int[]{R.raw.alligator, R.raw.bear, R.raw.elephant, R.raw.lion, R.raw.monkey, R.raw.panda, R.raw.rabbit,
                 R.raw.snake,  R.raw.squirrel, R.raw.tiger, R.raw.zebra};

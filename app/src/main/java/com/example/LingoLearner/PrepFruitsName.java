@@ -21,6 +21,7 @@ public class PrepFruitsName extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_nursery_alphabets);
+        TrackActivities.trackActivity("Fruits Name Activity");
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {

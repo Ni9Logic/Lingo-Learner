@@ -25,6 +25,7 @@ public class Weather extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_weather);
+        TrackActivities.trackActivity("Weather Activity");
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
