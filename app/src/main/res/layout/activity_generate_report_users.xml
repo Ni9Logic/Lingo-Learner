@@ -20,6 +20,7 @@
         android:layout_height="match_parent">
 
         <LinearLayout
+            android:id="@+id/activity_generate_reports"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -28,14 +29,14 @@
 
             <RelativeLayout
                 android:layout_width="350dp"
-                android:layout_height="126dp"
+                android:layout_height="136dp"
                 android:layout_marginTop="35dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="@string/send_announcements"
+                    android:text="Generate Reports For Users"
                     android:textColor="#FFFFFF"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -43,25 +44,8 @@
 
             </RelativeLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/sendAnnouncementText"
-                android:layout_width="400dp"
-                android:layout_height="145dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/textfield_shape"
-                android:drawableStart="@drawable/ic_notifications_white_24dp"
-                android:ems="10"
-                android:gravity="center"
-                android:hint="@string/send_announcements"
-                android:inputType="text"
-                android:padding="15dp" />
 
-            <Button
-                android:id="@+id/SendAnnouncementBtn"
-                android:layout_width="400dp"
-                android:layout_height="wrap_content"
-                android:text="@string/send" />
+
 
         </LinearLayout>
 

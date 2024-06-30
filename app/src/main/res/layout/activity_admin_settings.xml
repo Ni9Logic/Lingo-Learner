@@ -20,14 +20,14 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="400dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:orientation="vertical">
 
             <RelativeLayout
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="136dp"
                 android:layout_marginTop="35dp">
 
@@ -44,7 +44,7 @@
             </RelativeLayout>
             <androidx.cardview.widget.CardView
                 android:id="@+id/Create_Announcement"
-                android:layout_width="wrap_content"
+                android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:paddingTop="100dp"
                 android:layout_rowWeight="1"
@@ -54,7 +54,7 @@
                 app:cardElevation="5dp">
 
                 <LinearLayout
-                    android:layout_width="324dp"
+                    android:layout_width="350dp"
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:orientation="vertical"
@@ -66,6 +66,36 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
                         android:text="@string/create_announcement"
+                        android:textColor="#FF9800"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/activity_Admin_Generate_Reports"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:paddingTop="100dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="18dp">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/generate_reports"
                         android:textColor="#FF9800"
                         android:textSize="18sp" />
 

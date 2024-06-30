@@ -12,6 +12,7 @@ import androidx.cardview.widget.CardView;
 
 public class AdminSettings extends AppCompatActivity {
     CardView createAnnouncements;
+    CardView generateReports;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,9 +20,15 @@ public class AdminSettings extends AppCompatActivity {
         setContentView(R.layout.activity_admin_settings);
 
         createAnnouncements = findViewById(R.id.Create_Announcement);
+        generateReports = findViewById(R.id.activity_Admin_Generate_Reports);
 
         createAnnouncements.setOnClickListener(v -> {
             Intent intent = new Intent(AdminSettings.this, AdminSendAnnouncements.class);
+            startActivity(intent);
+        });
+
+        generateReports.setOnClickListener(v -> {
+            Intent intent = new Intent(AdminSettings.this, AdminGenerateReportUsers.class);
             startActivity(intent);
         });
 

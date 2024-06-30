@@ -317,6 +317,9 @@ One morning the ugly duckling sees the beautiful swans again. He knows them. He 
     <string name="create_announcement">Create Announcement</string>
     <string name="send_announcements">Send Announcements</string>
     <string name="send">Send</string>
+    <string name="generate_reports">Generate Reports</string>
+    <string name="generate_reports_for_user">Generate Reports For User</string>
+    <string name="generate_reports_for_users">Generate Reports</string>
 
 </resources>
 
