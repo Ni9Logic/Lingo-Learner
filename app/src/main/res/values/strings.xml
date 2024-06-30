@@ -309,6 +309,14 @@ One morning the ugly duckling sees the beautiful swans again. He knows them. He 
     <string name="user_role">User Role</string>
     <string name="settings_1">Settings</string>
     <string name="edit_profile">Edit Profile</string>
+    <string name="announcments">Announcments</string>
+    <string name="announcementss">Announcements</string>
+    <string name="notification_1">Notification 1</string>
+    <string name="notification_2">Notification 2</string>
+    <string name="admin_settings">Admin Settings</string>
+    <string name="create_announcement">Create Announcement</string>
+    <string name="send_announcements">Send Announcements</string>
+    <string name="send">Send</string>
 
 </resources>
 

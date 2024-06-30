@@ -255,7 +255,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AdminPanel"
+        <activity
+            android:name=".AdminPanel"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.ADMIN_PANEL" />
@@ -265,6 +266,9 @@
         <activity android:name=".MutateUsersClass" />
         <activity android:name=".MutateUserInfo" />
         <activity android:name=".EditProfile" />
+        <activity android:name=".UserAnnouncements" />
+        <activity android:name=".AdminSettings" />
+        <activity android:name=".AdminSendAnnouncements" />
 
         <meta-data
             android:name="preloaded_fonts"

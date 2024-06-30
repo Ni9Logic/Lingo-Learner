@@ -41,6 +41,7 @@ public class AdminPanel extends AppCompatActivity implements NavigationView.OnNa
     FirebaseAuth auth;
 
     ImageView mutateUserCard;
+    ImageView mutateSettings;
 
 
     SearchView searchView;
@@ -71,6 +72,7 @@ public class AdminPanel extends AppCompatActivity implements NavigationView.OnNa
         navigationView = findViewById(R.id.navigationviewAdmin);
         buttonDrawerToggle = findViewById(R.id.buttonDrawerToggleAdmin);
         mutateUserCard = findViewById(R.id.mutateUsersCards);
+        mutateSettings = findViewById(R.id.mutateSettings);
 
 
         searchView = findViewById(R.id.searchViewAdmin);
@@ -130,6 +132,11 @@ public class AdminPanel extends AppCompatActivity implements NavigationView.OnNa
             public void onClick(View v) {
                 toggleDrawer();
             }
+        });
+
+        mutateSettings.setOnClickListener(v -> {
+            Intent intent = new Intent(AdminPanel.this, AdminSettings.class);
+            startActivity(intent);
         });
 
         mutateUserCard.setOnClickListener(v -> {

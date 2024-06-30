@@ -231,6 +231,8 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
             Toast.makeText(this, "Home Clicked", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.action_announcement) {
             Toast.makeText(this, "Announcements Clicked", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(Home.this, UserAnnouncements.class);
+            startActivity(intent);
         } else if (id == R.id.action_setting) {
             Toast.makeText(this, "Settings Clicked", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(Home.this, EditProfile.class);
