@@ -187,8 +187,12 @@ public class AdminPanel extends AppCompatActivity implements NavigationView.OnNa
             startActivity(intent);
         } else if (id == R.id.action_announcement) {
             Toast.makeText(this, "Announcements Clicked", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(AdminPanel.this, UserAnnouncements.class);
+            startActivity(intent);
         } else if (id == R.id.action_setting) {
             Toast.makeText(this, "Settings Clicked", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(AdminPanel.this, EditProfile.class);
+            startActivity(intent);
         } else if (id == R.id.action_logout) {
             auth.signOut();
             startActivity(new Intent(this, MainActivity.class));
