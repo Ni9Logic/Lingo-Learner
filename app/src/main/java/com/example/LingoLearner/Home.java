@@ -35,7 +35,8 @@ import java.util.List;
 import java.util.Objects;
 
 public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
+    TextView NavUserName;
+    TextView NavEmail;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     ImageButton buttonDrawerToggle;
@@ -66,10 +67,8 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         if (actionBar != null) {
             actionBar.hide();
         }
-        getWindow().setFlags(
-                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
-                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
-        );
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+
 
         drawerLayout = findViewById(R.id.drawerlayout);
         navigationView = findViewById(R.id.navigationview);
@@ -111,6 +110,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
 
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, dataList);
         listView.setAdapter(adapter);
+
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -192,6 +192,10 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         });
 
         navigationView.setNavigationItemSelectedListener(this);
+
+        View headerView = navigationView.getHeaderView(0);
+        NavUserName = headerView.findViewById(R.id.textUsername);
+        NavEmail = headerView.findViewById(R.id.useremail);
         updateNavigationHeaderFromDatabase();
     }
 
@@ -211,6 +215,25 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
             startActivity(new Intent(this, Login.class));
             finish();
         } else {
+            String userEmail = currentUser.getEmail();
+            DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
+            ref.orderByChild("email").equalTo(userEmail).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
+                        String username = userSnapshot.child("username").getValue(String.class);
+                        String email = userSnapshot.child("email").getValue(String.class);
+
+                        NavUserName.setText(username);
+                        NavEmail.setText(email);
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+                    Log.w("Error", "Error getting user data", databaseError.toException());
+                }
+            });
             updateNavigationHeaderFromDatabase();
         }
     }
