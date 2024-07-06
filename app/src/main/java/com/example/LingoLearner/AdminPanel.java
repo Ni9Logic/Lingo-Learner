@@ -44,7 +44,6 @@ public class AdminPanel extends AppCompatActivity implements NavigationView.OnNa
     ImageView mutateSettings;
 
 
-    SearchView searchView;
     ListView listView;
     ArrayAdapter<String> adapter;
 
@@ -76,24 +75,8 @@ public class AdminPanel extends AppCompatActivity implements NavigationView.OnNa
         mutateSettings = findViewById(R.id.mutateSettings);
 
 
-        searchView = findViewById(R.id.searchViewAdmin);
+
         listView = findViewById(R.id.listViewAdmin);
-
-
-
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                adapter.getFilter().filter(newText);
-                listView.setVisibility(newText.isEmpty() ? View.GONE : View.VISIBLE);
-                return false;
-            }
-        });
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

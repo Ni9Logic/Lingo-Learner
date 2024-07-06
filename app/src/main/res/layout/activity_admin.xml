@@ -47,32 +47,19 @@
                     android:textStyle="bold" />
 
 
-                <androidx.appcompat.widget.SearchView
-                    android:id="@+id/searchViewAdmin"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_below="@id/buttonDrawerToggleAdmin"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="@drawable/search_background"
-                    android:padding="10dp"
-                    app:iconifiedByDefault="false"
-                    app:queryHint="Search..." />
+
 
                 <ListView
                     android:id="@+id/listViewAdmin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/searchViewAdmin"
                     android:visibility="gone" />
 
 
             </RelativeLayout>
 
             <GridLayout
-                android:layout_width="match_parent"
+                android:layout_width="380dp"
                 android:layout_height="wrap_content"
                 android:alignmentMode="alignMargins"
                 android:columnCount="1"
@@ -113,6 +100,7 @@
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
+
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -147,6 +135,7 @@
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
+
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

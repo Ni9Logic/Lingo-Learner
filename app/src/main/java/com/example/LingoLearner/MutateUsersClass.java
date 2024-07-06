@@ -81,20 +81,23 @@ public class MutateUsersClass extends AppCompatActivity {
             cardView.setElevation(5);
 
             // Create a LinearLayout to hold the user's information
+            // Create a LinearLayout to hold the user's information
             LinearLayout linearLayout = new LinearLayout(this);
             linearLayout.setOrientation(LinearLayout.VERTICAL);
-            linearLayout.setGravity(Gravity.CENTER);
-            LinearLayout.LayoutParams linearLayoutLayoutParams = new LinearLayout.LayoutParams(1000, LinearLayout.LayoutParams.MATCH_PARENT);
+            linearLayout.setGravity(Gravity.CENTER); // Add this line to center the content
+            LinearLayout.LayoutParams linearLayoutLayoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
             linearLayout.setLayoutParams(linearLayoutLayoutParams);
             linearLayout.setPadding(16, 0, 16, 16);
 
             // Create an ImageView to display the user's image
             ImageView userImageView = new ImageView(this);
-            userImageView.setLayoutParams(new LinearLayout.LayoutParams(600, 600));
+            LinearLayout.LayoutParams userImageViewLayoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, 300);
+            userImageViewLayoutParams.gravity = Gravity.CENTER_HORIZONTAL; // Add this line to center the ImageView
+            userImageView.setLayoutParams(userImageViewLayoutParams);
+
             // Generating Unique IDS for each image
             int imageID = View.generateViewId();
             userImageView.setId(imageID);
-            userImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             userImageView.setImageResource(R.drawable.user); // Replace with the actual image resource
             linearLayout.addView(userImageView);
 
