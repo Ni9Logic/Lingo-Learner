@@ -59,6 +59,7 @@ public class NursryGame2 extends AppCompatActivity implements View.OnClickListen
         if (s.compareTo(st)==0) {
             count++;
             if (count == 26) {
+                TrackActivities.trackGamesRecord("Prep Class", "Voice Identification Game", 1, 0.0);
                 count = 0;
             }
             opt1.setText(Character.toString(comb1.charAt(count)));

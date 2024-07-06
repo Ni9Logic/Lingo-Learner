@@ -25,6 +25,7 @@ public class TrackActivities {
             // Search for the user in the Users reference
             DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
 
+            Double finalUserCompletionTime = userCompletionTime;
             mDatabase.child("Users").addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -96,7 +97,7 @@ public class TrackActivities {
                                                             times.add(time.getValue(Double.class));
                                                         }
                                                     }
-                                                    times.add(userCompletionTime);
+                                                    times.add(finalUserCompletionTime);
                                                     timeReference.setValue(times);
 
                                                     // Calculate average userCompletionTime

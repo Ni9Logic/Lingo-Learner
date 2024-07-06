@@ -8,7 +8,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class NursryGame1 extends AppCompatActivity implements View.OnClickListener{
+public class NursryGame1 extends AppCompatActivity implements View.OnClickListener {
 
     TextView text;
     Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12, btn13,
@@ -87,15 +87,14 @@ public class NursryGame1 extends AppCompatActivity implements View.OnClickListen
         Button b = (Button) view;
         String st = b.getText().toString();
         if (count == 25) {
+            TrackActivities.trackGamesRecord("Prep Class", "Alphabets Serially Game", 1, 0.0);
             Toast.makeText(this, "Well done", Toast.LENGTH_SHORT).show();
             text.setText("Great! You finished your task");
-        }
-        else if (s.compareTo(st)==0) {
+        } else if (s.compareTo(st) == 0) {
             show = show + st + " ";
             text.setText(show);
             count++;
-        }
-        else {
+        } else {
             Toast.makeText(this, "Wrong Select", Toast.LENGTH_SHORT).show();
         }
     }

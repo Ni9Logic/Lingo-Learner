@@ -16,9 +16,9 @@ import java.util.Random;
 
 public class ThreeGame extends AppCompatActivity {
 
-    private final String[] animalNames = {"Bird", "Cat","Cow", "Cock", "Dog", "Elephant", "Eagle", "Goat", "Hen", "Horse", "Leopard", "Lion", "Monkey","Owl", "Pig", "Snake", "Tiger", "Wolf"};
+    private final String[] animalNames = {"Bird", "Cat", "Cow", "Cock", "Dog", "Elephant", "Eagle", "Goat", "Hen", "Horse", "Leopard", "Lion", "Monkey", "Owl", "Pig", "Snake", "Tiger", "Wolf"};
     private final int[] animalImages = {R.drawable.bird, R.drawable.cat3, R.drawable.cow, R.drawable.cock, R.drawable.dog2, R.drawable.elephant1, R.drawable.eagle, R.drawable.goat, R.drawable.hen, R.drawable.horse, R.drawable.leapord, R.drawable.lion, R.drawable.monkey, R.drawable.owl, R.drawable.pig, R.drawable.snake, R.drawable.tiger, R.drawable.wolf};
-    private final int[] animalSounds = {R.raw.birds, R.raw.cat, R.raw.cow, R.raw.cock, R.raw.dog, R.raw.elephant1, R.raw.eagle, R.raw.goat, R.raw.hens,R.raw.horse, R.raw.leopard, R.raw.lion1, R.raw.monkey1, R.raw.owl, R.raw.pig, R.raw.snake1, R.raw.tiger1, R.raw.wolf};
+    private final int[] animalSounds = {R.raw.birds, R.raw.cat, R.raw.cow, R.raw.cock, R.raw.dog, R.raw.elephant1, R.raw.eagle, R.raw.goat, R.raw.hens, R.raw.horse, R.raw.leopard, R.raw.lion1, R.raw.monkey1, R.raw.owl, R.raw.pig, R.raw.snake1, R.raw.tiger1, R.raw.wolf};
     private String correctWord;
     private ImageView imageViewAnimal;
     private EditText editTextGuess;
@@ -163,6 +163,7 @@ public class ThreeGame extends AppCompatActivity {
 
             // Clear the EditText for the next guess
             editTextGuess.setText("");
+
         } else {
             // If the guess is incorrect, display a toast message
             Toast.makeText(this, "Incorrect guess. Try again!", Toast.LENGTH_SHORT).show();
@@ -176,6 +177,7 @@ public class ThreeGame extends AppCompatActivity {
         }
 
         // Display final score
+        TrackActivities.trackGamesRecord("Class Three", "Guess Word", score, 0.0);
         Toast.makeText(this, "Game over! Final score: " + score, Toast.LENGTH_LONG).show();
     }
 
