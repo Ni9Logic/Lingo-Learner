@@ -2,9 +2,13 @@ package com.lingolearner.LingoLearner;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +23,8 @@ public class ClassOne extends AppCompatActivity {
     ImageView WeekDays;
     ImageView Months;
     ImageView Writting;
+
+    TextView heytxtC1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +48,18 @@ public class ClassOne extends AppCompatActivity {
         Grammar= findViewById(R.id.grammar);
         Vocabulary= findViewById(R.id.vocabulary);
         Writting=findViewById(R.id.writting);
+
+        heytxtC1 = findViewById(R.id.HeytxtC1);
+
+        // Load the animations
+        Animation fliprotateAnimation = AnimationUtils.loadAnimation(this, R.anim.fliprotateanim);
+
+        // Apply an animation to the TextView
+        heytxtC1.startAnimation(fliprotateAnimation);
+
+
+        // Start the text animation
+        startTextAnimation("Welcome to LingoLearner, Little Explorers in ClassOne!");
 
         Months.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -108,5 +126,21 @@ public class ClassOne extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    private void startTextAnimation(String text) {
+        heytxtC1.setText("");  // Clear the TextView before starting the animation
+
+        Handler handler = new Handler();
+        for (int i = 0; i < text.length(); i++) {
+            final int index = i;
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    // Append the next character
+                    heytxtC1.append(String.valueOf(text.charAt(index)));
+                }
+            }, i * 300);  // 250ms delay for each character
+        }
     }
 }

@@ -2,9 +2,13 @@ package com.lingolearner.LingoLearner;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,12 +17,13 @@ public class ClassTwo extends AppCompatActivity {
     ImageView Counting;
     ImageView Vocabulary;
     ImageView Grammar;
-    ImageView Reading;
     ImageView Writting;
     ImageView Listening;
     ImageView Story;
     ImageView Weather;
     ImageView Seasons;
+
+    TextView heytxtC2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +42,6 @@ public class ClassTwo extends AppCompatActivity {
 
         Counting= findViewById(R.id.counting);
         Vocabulary=findViewById(R.id.vocabulary1);
-        Reading=findViewById(R.id.reading);
         Writting=findViewById(R.id.writting);
         Listening=findViewById(R.id.listening);
         Grammar=findViewById(R.id.grammar);
@@ -45,8 +49,18 @@ public class ClassTwo extends AppCompatActivity {
         Weather=findViewById(R.id.weather);
         Seasons=findViewById(R.id.season);
 
+        heytxtC2 = findViewById(R.id.HeytxtC2);
 
 
+        // Load the animations
+        Animation fliprotateAnimation = AnimationUtils.loadAnimation(this, R.anim.fliprotateanim);
+
+        // Apply an animation to the TextView
+        heytxtC2.startAnimation(fliprotateAnimation);
+
+
+        // Start the text animation
+        startTextAnimation("Welcome to LingoLearner, Little Explorers in Class2!");
 
         Counting.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,13 +78,6 @@ public class ClassTwo extends AppCompatActivity {
             }
         });
 
-        Reading.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ClassTwo.this, TwoReading.class);
-                startActivity(intent);
-            }
-        });
 
         Writting.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -120,5 +127,20 @@ public class ClassTwo extends AppCompatActivity {
             }
         });
 
+    }
+    private void startTextAnimation(String text) {
+        heytxtC2.setText("");  // Clear the TextView before starting the animation
+
+        Handler handler = new Handler();
+        for (int i = 0; i < text.length(); i++) {
+            final int index = i;
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    // Append the next character
+                    heytxtC2.append(String.valueOf(text.charAt(index)));
+                }
+            }, i * 300);  // 250ms delay for each character
+        }
     }
 }

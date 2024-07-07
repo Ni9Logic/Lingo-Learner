@@ -2,9 +2,13 @@ package com.lingolearner.LingoLearner;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +21,8 @@ public class ClassThree extends AppCompatActivity {
     ImageView Writting;
     ImageView Story;
     ImageView Game;
+
+    TextView heytxtC3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +46,17 @@ public class ClassThree extends AppCompatActivity {
         Grammar=findViewById(R.id.grammar);
         Story=findViewById(R.id.story);
         Game=findViewById(R.id.game);
+        heytxtC3 = findViewById(R.id.HeytxtC3);
+
+        // Load the animations
+        Animation fliprotateAnimation = AnimationUtils.loadAnimation(this, R.anim.fliprotateanim);
+
+        // Apply an animation to the TextView
+        heytxtC3.startAnimation(fliprotateAnimation);
+
+
+        // Start the text animation
+        startTextAnimation("Welcome to LingoLearner, Little Explorers in Class3!");
 
         Drawing.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,5 +114,20 @@ public class ClassThree extends AppCompatActivity {
             }
         });
 
+    }
+    private void startTextAnimation(String text) {
+        heytxtC3.setText("");  // Clear the TextView before starting the animation
+
+        Handler handler = new Handler();
+        for (int i = 0; i < text.length(); i++) {
+            final int index = i;
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    // Append the next character
+                    heytxtC3.append(String.valueOf(text.charAt(index)));
+                }
+            }, i * 300);  // 250ms delay for each character
+        }
     }
 }

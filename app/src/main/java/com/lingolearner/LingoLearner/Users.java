@@ -1,17 +1,17 @@
 package com.lingolearner.LingoLearner;
 
 public class Users {
+    private String username;
+    private String email;
+    private String dateOfBirth;
 
-    public String username, email, password, confirmPassword, dateOfBirth;
-
-    public Users(String username, String email, String dateOfBirth) {
+    public Users() {
+        // Default constructor required for calls to DataSnapshot.getValue(Users.class)
     }
 
-    public Users(String username, String email, String password, String confirmPassword, String dateOfBirth) {
+    public Users(String username, String email, String dateOfBirth) {
         this.username = username;
         this.email = email;
-        this.password = password;
-        this.confirmPassword = confirmPassword;
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -29,22 +29,6 @@ public class Users {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getConfirmPassword() {
-        return confirmPassword;
-    }
-
-    public void setConfirmPassword(String confirmPassword) {
-        this.confirmPassword = confirmPassword;
     }
 
     public String getDateOfBirth() {

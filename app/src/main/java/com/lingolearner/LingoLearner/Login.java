@@ -70,7 +70,6 @@ public class Login extends AppCompatActivity {
         // Apply an animation to the TextView
         welcome.startAnimation(fliprotateAnimation);
 
-
         // Start the text animation
         startTextAnimation("Hey! Good to see you again");
 

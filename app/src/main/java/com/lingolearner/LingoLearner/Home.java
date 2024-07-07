@@ -32,14 +32,16 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    TextView NavUserName;
-    TextView NavEmail;
+
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     ImageButton buttonDrawerToggle;
     FirebaseAuth auth;
+    TextView NavEmail;
+    TextView NavUserName;
 
     ImageView nurseryCard;
     ImageView prepCard;
@@ -52,10 +54,6 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     ArrayAdapter<String> adapter;
     List<String> dataList;
 
-    private boolean isAlphabetActivitiesHighlighted = false;
-    private boolean isCountingActivitiesHighlighted = false;
-    private boolean isPhonicsActivitiesHighlighted = false;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,8 +64,10 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         if (actionBar != null) {
             actionBar.hide();
         }
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-
+        getWindow().setFlags(
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+        );
 
         drawerLayout = findViewById(R.id.drawerlayout);
         navigationView = findViewById(R.id.navigationview);
@@ -82,28 +82,28 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         listView = findViewById(R.id.listViewAdmin);
 
         dataList = new ArrayList<>();
-        dataList.add("Animals Name");
-        dataList.add("Alphabet");
-        dataList.add("Birds Name");
-        dataList.add("Colors");
-        dataList.add("Counting");
-        dataList.add("Fruits Name");
-        dataList.add("Fun Activity");
-        dataList.add("Grammar");
-        dataList.add("Vocabulary");
-        dataList.add("Vegetables Name");
-        dataList.add("Parts of Body");
-        dataList.add("Weekdays");
-        dataList.add("Months");
-        dataList.add("Four Seasons");
-        dataList.add("Weather");
-        dataList.add("Listening");
-        dataList.add("Phonic");
-        dataList.add("Reading");
-        dataList.add("Rhythms");
-        dataList.add("Shapes");
-        dataList.add("Short Stories");
-        dataList.add("Games");
+        dataList.add("Animals Name"); // Done
+        dataList.add("Alphabet"); // Done
+        dataList.add("Birds Name"); // Done
+        dataList.add("Colors"); // Done
+        dataList.add("Counting"); // Done
+        dataList.add("Fruits Name"); // Done
+        dataList.add("Fun Activity"); // Done
+        dataList.add("Grammar"); // Done
+        dataList.add("Vocabulary"); // Done
+        dataList.add("Vegetables Name"); // Done
+        dataList.add("Parts of Body"); // Done
+        dataList.add("Weekdays"); // Done
+        dataList.add("Months"); // Done
+        dataList.add("Four Seasons"); // Done
+        dataList.add("Weather"); // Done
+        dataList.add("Listening"); // Done
+        dataList.add("Phonic"); // Done
+        dataList.add("Reading"); // Done
+        dataList.add("Rhythms"); // Done
+        dataList.add("Shapes"); // Done
+        dataList.add("Short Stories"); // Done
+        dataList.add("Games"); // Done
         dataList.add("Writing");
         dataList.add("Drawing");
 
@@ -129,31 +129,86 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String selectedItem = adapter.getItem(position);
-
-                // Check if the selected item is "Alphabet", "Counting", or "Phonic"
-                if (selectedItem.equals("Alphabet")) {
-                    // Show the alphabet-related activities
-                    showAlphabetActivities();
-                } else if (selectedItem.equals("Counting")) {
-                    // Show the counting-related activities
-                    showCountingActivities();
-                } else if (selectedItem.equals("Phonic")) {
-                    // Show the phonics-related activities
-                    showPhonicsActivities();
-                } else {
-                    // Start the activity based on the selected item
-                    Intent intent = null;
+                if (selectedItem != null) {
+                    resetHighlightState();
                     switch (selectedItem) {
-                        case "Counting":
-                            intent = new Intent(Home.this, NurseryCounting.class);
+                        case "Games":
+                            highlightGamesActivity();
                             break;
-                        // Add more cases for other items as needed
-                    }
-                    if (intent != null) {
-                        startActivity(intent);
+                        case "Shapes":
+                            highlightShapesActivity();
+                            break;
+                        case "Rhythms":
+                            highlightRhythmActivity();
+                            break;
+                        case "Reading":
+                            highlightReadingActivity();
+                            break;
+                        case "Listening":
+                            highlightListeningActivity();
+                            break;
+                        case "Weather":
+                            highlightWeatherActivity();
+                            break;
+                        case "Four Seasons":
+                            highlightFourSeasonsActivity();
+                            break;
+                        case "Months":
+                            highlightMonthsActivity();
+                            break;
+                        case "Weekdays":
+                            highlightWeekdaysActivity();
+                            break;
+                        case "Vegetables Name":
+                            highlightVegetablesActivity();
+                            break;
+                        case "Vocabulary":
+                            highlightVocabularyActivities();
+                            break;
+                        case "Alphabet":
+                            highlightAlphabetActivities();
+                            break;
+                        case "Counting":
+                            highlightCountingActivities();
+                            break;
+                        case "Phonic":
+                            highlightPhonicsActivities();
+                            break;
+                        case "Animals Name":
+                            highlightAnimalsActivity();
+                            break;
+                        case "Birds Name":
+                            highlightBirdsActivity();
+                            break;
+                        case "Colors":
+                            highlightColorsActivity();
+                            break;
+                        case "Fruits Name":
+                            highlightFruitsActivity();
+                            break;
+                        case "Fun Activity":
+                            highlightFunActivity();
+                            break;
+                        case "Grammar":
+                            highlightGrammarActivity();
+                            break;
+                        case "Parts of Body":
+                            highlightPartsOfBodyActivity();
+                            break;
+                        case "Short Stories":
+                            highlightShortStoriesActivity();
+                            break;
+                        default:
+                            Intent intent = null;
+                            if (selectedItem.equals("Counting")) {
+                                intent = new Intent(Home.this, NurseryCounting.class);
+                            }
+                            if (intent != null) {
+                                startActivity(intent);
+                            }
+                            break;
                     }
                 }
-                // Handle item click action here, e.g., display a toast
                 Toast.makeText(Home.this, "Selected: " + selectedItem, Toast.LENGTH_SHORT).show();
             }
         });
@@ -274,7 +329,6 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         boolean isAdmin = false;
-                        System.out.println("I am Here");
                         for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
                             String userEmailFromDB = userSnapshot.child("email").getValue(String.class);
                             if (userEmailFromDB != null && userEmailFromDB.equals(userEmail)) {
@@ -300,7 +354,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                     }
                 });
             } else {
-                Toast.makeText(Home.this, "You are not logged in", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Home.this, "You are not an administrator", Toast.LENGTH_SHORT).show();
             }
         }
         drawerLayout.closeDrawer(GravityCompat.START);
@@ -308,112 +362,124 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     }
 
     private void updateNavigationHeaderFromDatabase() {
-        FirebaseUser user = auth.getCurrentUser();
-        if (user != null) {
-            String uid = user.getUid();
-            DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users").child(uid);
-            ref.addValueEventListener(new ValueEventListener() {
+        FirebaseUser currentUser = auth.getCurrentUser();
+        if (currentUser != null) {
+            DatabaseReference userRef = FirebaseDatabase.getInstance().getReference("Users").child(currentUser.getUid());
+            userRef.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    if (dataSnapshot.exists()) {
-                        String username = dataSnapshot.child("username").getValue(String.class);
-                        String email = dataSnapshot.child("email").getValue(String.class);
+                    String username = dataSnapshot.child("username").getValue(String.class);
+                    String email = dataSnapshot.child("email").getValue(String.class);
 
-                        Log.d("HomeActivity", "Username: " + username);
-                        Log.d("HomeActivity", "Email: " + email);
+                    View headerView = navigationView.getHeaderView(0);
+                    TextView navUsername = headerView.findViewById(R.id.textUsername);
+                    TextView navEmail = headerView.findViewById(R.id.useremail);
 
-                        updateNavigationHeader(username, email);
-                    } else {
-                        Log.d("HomeActivity", "No data found for user");
+                    if (username != null && email != null) {
+                        navUsername.setText(username);
+                        navEmail.setText(email);
                     }
                 }
 
                 @Override
                 public void onCancelled(@NonNull DatabaseError databaseError) {
-                    Toast.makeText(Home.this, "Failed to load user data.", Toast.LENGTH_SHORT).show();
-                    Log.e("HomeActivity", "DatabaseError: " + databaseError.getMessage());
+                    Log.e("Error", "Error loading user data", databaseError.toException());
                 }
             });
         }
     }
 
-    private void updateNavigationHeader(String username, String email) {
-        View headerView = navigationView.getHeaderView(0);
-        TextView textUsername = headerView.findViewById(R.id.textUsername);
-        TextView textEmail = headerView.findViewById(R.id.useremail);
-
-        textUsername.setText(username);
-        textEmail.setText(email);
+    private void highlightGamesActivity(){
+        threeCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
+    }
+    private void highlightShortStoriesActivity(){
+        twoCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
+        threeCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
+    }
+    private void highlightShapesActivity(){
+        nurseryCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
+    }
+    private void highlightRhythmActivity(){
+        prepCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
     }
 
-    private void showAlphabetActivities() {
-        // Toggle the highlight state
-        isAlphabetActivitiesHighlighted = !isAlphabetActivitiesHighlighted;
-
-        // Update the UI to reflect the highlight state
-        updateHighlightState();
+    private void highlightReadingActivity(){
+        threeCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
+    }
+    private void highlightListeningActivity(){
+        twoCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
+    }
+    private void highlightWeatherActivity(){
+        twoCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
+    }
+    private void highlightFourSeasonsActivity(){
+        twoCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
+    }
+    private void highlightMonthsActivity(){
+        oneCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
+    }
+    private void highlightWeekdaysActivity(){
+        oneCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
+    }
+    private void highlightPartsOfBodyActivity(){
+        oneCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
+    }
+    private void highlightVegetablesActivity(){
+        prepCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
+    }
+    private void highlightVocabularyActivities(){
+        oneCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
+        twoCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
+        threeCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
+    }
+    private void highlightGrammarActivity(){
+        oneCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
+        twoCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
+        threeCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
+    }
+    private void highlightFunActivity(){
+        prepCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
+    }
+    private void resetHighlightState() {
+        nurseryCard.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+        prepCard.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+        oneCard.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+        twoCard.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+        threeCard.setBackgroundColor(getResources().getColor(android.R.color.transparent));
     }
 
-    private void showCountingActivities() {
-        // Toggle the highlight state
-        isCountingActivitiesHighlighted = !isCountingActivitiesHighlighted;
-
-        // Update the UI to reflect the highlight state
-        updateHighlightState();
+    private void highlightAlphabetActivities() {
+        nurseryCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
+        prepCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
     }
 
-    private void showPhonicsActivities() {
-        // Toggle the highlight state
-        isPhonicsActivitiesHighlighted = !isPhonicsActivitiesHighlighted;
-
-        // Update the UI to reflect the highlight state
-        updateHighlightState();
+    private void highlightCountingActivities() {
+        nurseryCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
+        prepCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
+        oneCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
     }
 
-    private void updateHighlightState() {
-        // Update the UI to reflect the highlight state of alphabet-related activities
-        if (isAlphabetActivitiesHighlighted) {
-            nurseryCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
-            prepCard.setBackgroundColor(getResources().getColor(R.color.another_highlight_color));
-            nurseryCard.setAlpha(0.5f);
-            prepCard.setAlpha(0.5f);
-        } else {
-            nurseryCard.setBackgroundColor(getResources().getColor(android.R.color.transparent));
-            prepCard.setBackgroundColor(getResources().getColor(android.R.color.transparent));
-            nurseryCard.setAlpha(1.0f);
-            prepCard.setAlpha(1.0f);
-        }
-
-        // Update the UI to reflect the highlight state of counting-related activities
-        if (isCountingActivitiesHighlighted) {
-            nurseryCard.setBackgroundColor(getResources().getColor(R.color.counting_highlight_color));
-            prepCard.setBackgroundColor(getResources().getColor(R.color.another_counting_highlight_color));
-            oneCard.setBackgroundColor(getResources().getColor(R.color.yet_another_counting_highlight_color));
-            nurseryCard.setAlpha(0.5f);
-            prepCard.setAlpha(0.5f);
-            oneCard.setAlpha(0.5f);
-        } else {
-            nurseryCard.setBackgroundColor(getResources().getColor(android.R.color.transparent));
-            prepCard.setBackgroundColor(getResources().getColor(android.R.color.transparent));
-            oneCard.setBackgroundColor(getResources().getColor(android.R.color.transparent));
-            nurseryCard.setAlpha(1.0f);
-            prepCard.setAlpha(1.0f);
-            oneCard.setAlpha(1.0f);
-        }
-
-        // Update the UI to reflect the highlight state of phonics-related activities
-        if (isPhonicsActivitiesHighlighted) {
-            nurseryCard.setBackgroundColor(getResources().getColor(R.color.phonics_highlight_color));
-            prepCard.setBackgroundColor(getResources().getColor(R.color.another_phonics_highlight_color));
-            nurseryCard.setAlpha(0.5f);
-            prepCard.setAlpha(0.5f);
-        } else {
-            nurseryCard.setBackgroundColor(getResources().getColor(android.R.color.transparent));
-            prepCard.setBackgroundColor(getResources().getColor(android.R.color.transparent));
-            nurseryCard.setAlpha(1.0f);
-            prepCard.setAlpha(1.0f);
-        }
-
+    private void highlightPhonicsActivities() {
+        nurseryCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
+        prepCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
+        oneCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
+        twoCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
     }
 
+    private void highlightAnimalsActivity(){
+        prepCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
+    }
+
+    private void highlightBirdsActivity(){
+        oneCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
+    }
+
+    private void highlightColorsActivity(){
+        nurseryCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
+    }
+
+    private void highlightFruitsActivity(){
+        prepCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
+
+    }
 }

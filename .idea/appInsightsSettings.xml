@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="com.example.LingoLearner" />
-                  <option name="mobileSdkAppId" value="1:775900308644:android:24465c5cbd9ad67a8f3231" />
-                  <option name="projectId" value="lingolearner-83753" />
-                  <option name="projectNumber" value="775900308644" />
+                  <option name="appId" value="com.lingolearner.LingoLearner" />
+                  <option name="mobileSdkAppId" value="1:810420239393:android:47e4ef90e5be2f41daf760" />
+                  <option name="projectId" value="lingolearner-new-1" />
+                  <option name="projectNumber" value="810420239393" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

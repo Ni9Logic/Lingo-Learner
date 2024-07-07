@@ -15,16 +15,14 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launchers"
         android:label="@string/Lingolearner"
-        android:maxSdkVersion="32"
+        android:maxSdkVersion="34"
         android:minSdkVersion="23"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"
         tools:overrideLibrary="androidx.compose.ui.graphics"
         tools:targetApi="33">
-        <activity
-            android:name=".AlphabetsList"
-            android:exported="false" />
+
         <activity
             android:name=".ResetPassword"
             android:exported="false" />
@@ -52,18 +50,14 @@
         <activity
             android:name=".ReadingPoem1"
             android:exported="false" />
-        <activity
-            android:name=".poem1"
-            android:exported="false" />
+
         <activity
             android:name=".PrepAnimalsName"
             android:exported="false" />
         <activity
             android:name=".ThreeGame"
             android:exported="false" />
-        <activity
-            android:name=".BossAct"
-            android:exported="false" />
+
         <activity
             android:name=".Seasons"
             android:exported="false"
@@ -126,9 +120,7 @@
         <activity
             android:name=".ThreeReading"
             android:exported="false" />
-        <activity
-            android:name=".DrawingActivity"
-            android:exported="false" />
+
         <activity
             android:name=".TwoGrammer"
             android:exported="false"
@@ -149,13 +141,8 @@
             android:name=".TwoVocabulary"
             android:exported="false"
             android:screenOrientation="landscape" />
-        <activity
-            android:name=".TwoReading"
-            android:exported="false" />
-        <activity
-            android:name=".OneMonths"
-            android:exported="false"
-            android:screenOrientation="landscape" />
+
+
         <activity
             android:name=".OneWeekdays"
             android:exported="false"

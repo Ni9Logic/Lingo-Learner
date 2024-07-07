@@ -1,5 +1,6 @@
 package com.lingolearner.LingoLearner;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
@@ -70,20 +71,25 @@ public class TwoCounting extends AppCompatActivity {
         playVideo();
     }
 
+    private void playPreviousVideo() {
+        currentVideoIndex--;
+        if (currentVideoIndex < 0) {
+            currentVideoIndex = videoResources.length - 1; // Set to the last video if at the beginning
+        }
+        playVideo();
+    }
+
     public void playNextVideo(View view) {
         playNextVideo();
     }
 
-    @Override
-    public void onWindowFocusChanged(boolean hasFocus) {
-        super.onWindowFocusChanged(hasFocus);
-        if (hasFocus) {
-            View decorView = getWindow().getDecorView();
-            decorView.setSystemUiVisibility(
-                    View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY | View.SYSTEM_UI_FLAG_LAYOUT_STABLE |
-                            View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_FULLSCREEN |
-                            View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-            );
-        }
+    public void playPreviousVideo(View view) {
+        playPreviousVideo();
+    }
+
+    public void navigateToHome(View view) {
+        Intent intent = new Intent(this, ClassTwo.class);
+        startActivity(intent);
+        finish();
     }
 }

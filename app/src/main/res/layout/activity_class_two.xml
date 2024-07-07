@@ -31,6 +31,7 @@
                 android:layout_marginTop="35dp">
 
                 <TextView
+                    android:id="@+id/HeytxtC2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
@@ -217,40 +218,6 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="12dp"
                             android:text="Weather"
-                            android:textColor="#FF9800"
-                            android:textSize="18sp" />
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="12dp"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="5dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="18dp">
-
-                        <ImageView
-                            android:id="@+id/reading"
-                            android:layout_width="160dp"
-                            android:layout_height="110dp"
-                            android:src="@drawable/reading" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
-                            android:text="Reading"
                             android:textColor="#FF9800"
                             android:textSize="18sp" />
 

@@ -1,5 +1,6 @@
 package com.lingolearner.LingoLearner;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
@@ -61,4 +62,10 @@ public class NurseryColors extends AppCompatActivity {
         }
     }
 
+    public void navigateToHome(View view) {
+        Intent intent = new Intent(this, NurseryClass.class);
+        startActivity(intent);
+        finish();
     }
+
+}

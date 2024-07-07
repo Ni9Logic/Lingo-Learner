@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "775900308644",
-    "project_id": "lingolearner-83753",
-    "storage_bucket": "lingolearner-83753.appspot.com"
+    "project_number": "810420239393",
+    "project_id": "lingolearner-new-1",
+    "storage_bucket": "lingolearner-new-1.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:775900308644:android:24465c5cbd9ad67a8f3231",
+        "mobilesdk_app_id": "1:810420239393:android:47e4ef90e5be2f41daf760",
         "android_client_info": {
-          "package_name": "com.example.LingoLearner"
+          "package_name": "com.lingolearner.LingoLearner"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCXwyq5KgRFKBTGFsErtF5FAQHxC79lNlE"
+          "current_key": "AIzaSyApWkSg81XSmFptXCjIBTmbou-tsdPomBE"
         }
       ],
       "services": {

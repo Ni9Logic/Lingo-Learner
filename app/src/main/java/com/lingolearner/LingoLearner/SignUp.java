@@ -112,7 +112,7 @@ public class SignUp extends AppCompatActivity {
                             editTextPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
                             editTextPassword.setCompoundDrawablesWithIntrinsicBounds(R.drawable.password, 0, R.drawable.showpassword, 0);
                             isPasswordVisible = false;
-                        } else {
+                        }/**/ else {
                             // Show Password
                             editTextPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
                             editTextPassword.setCompoundDrawablesWithIntrinsicBounds(R.drawable.password, 0, R.drawable.showpassword, 0);
@@ -240,8 +240,8 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                    // Username is available, proceed with sign up
-                    createUserWithEmailAndPassword(email, password, username, dateOfBirth);
+                // Username is available, proceed with sign up
+                createUserWithEmailAndPassword(email, password, username, dateOfBirth);
             }
 
             @Override

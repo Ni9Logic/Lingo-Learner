@@ -1,16 +1,17 @@
 
 package com.lingolearner.LingoLearner;
 
-        import android.media.MediaPlayer;
-        import android.net.Uri;
-        import android.os.Bundle;
-        import android.view.View;
-        import android.view.WindowManager;
-        import android.widget.MediaController;
-        import android.widget.VideoView;
+import android.content.Intent;
+import android.media.MediaPlayer;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.MediaController;
+import android.widget.VideoView;
 
-        import androidx.appcompat.app.ActionBar;
-        import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class ThreeGrammar extends AppCompatActivity {
 
@@ -67,7 +68,25 @@ public class ThreeGrammar extends AppCompatActivity {
         playVideo();
     }
 
+    private void playPreviousVideo() {
+        currentVideoIndex--;
+        if (currentVideoIndex < 0) {
+            currentVideoIndex = videoResources.length - 1; // Set to the last video if at the beginning
+        }
+        playVideo();
+    }
+
     public void playNextVideo(View view) {
         playNextVideo();
+    }
+
+    public void playPreviousVideo(View view) {
+        playPreviousVideo();
+    }
+
+    public void navigateToHome(View view) {
+        Intent intent = new Intent(this, ClassThree.class);
+        startActivity(intent);
+        finish();
     }
 }

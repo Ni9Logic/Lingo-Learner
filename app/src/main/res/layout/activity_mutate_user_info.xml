@@ -48,10 +48,11 @@
                 android:ems="10"
                 android:enabled="true"
                 android:inputType="textEmailAddress"
-                android:paddingTop="100dp"
+                android:paddingTop="120dp"
                 android:singleLine="true"
-                android:text="@string/email"
+                android:hint="@string/email"
                 tools:ignore="LabelFor" />
+
 
             <EditText
                 android:id="@+id/userInfoDOB"
@@ -62,8 +63,11 @@
                 android:enabled="true"
                 android:inputType="text"
                 android:singleLine="true"
-                android:text="@string/dob"
+                android:hint="@string/dob"
+                android:layout_marginTop="5dp"
                 tools:ignore="LabelFor,TextFields" />
+
+
             <EditText
                 android:id="@+id/userInfoUsername"
                 android:layout_width="match_parent"
@@ -73,8 +77,10 @@
                 android:enabled="true"
                 android:inputType="text"
                 android:singleLine="true"
-                android:text="@string/username1"
+                android:layout_marginTop="5dp"
+                android:hint="@string/username1"
                 tools:ignore="LabelFor,TextFields" />
+
             <EditText
                 android:id="@+id/userInfoPassword"
                 android:layout_width="match_parent"
@@ -82,10 +88,12 @@
                 android:autofillHints="true"
                 android:ems="10"
                 android:enabled="true"
-                android:inputType="text"
+                android:inputType="textPassword"
+                android:layout_marginTop="5dp"
                 android:singleLine="true"
-                android:text="@string/password1"
+                android:hint="@string/password1"
                 tools:ignore="LabelFor,TextFields" />
+
             <EditText
                 android:id="@+id/userInfoRole"
                 android:layout_width="match_parent"
@@ -95,29 +103,42 @@
                 android:enabled="true"
                 android:inputType="text"
                 android:singleLine="true"
-                android:text="@string/user_role"
+                android:hint="@string/user_role"
+                android:layout_marginTop="5dp"
                 tools:ignore="LabelFor,TextFields" />
-
-
 
             <Button
                 android:id="@+id/userInfoUpdateBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/save" />
+                android:layout_marginTop="20dp"
+                android:text="@string/save"
+                android:layout_gravity="center"
+                android:background="@drawable/border1"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textColor="#FFFCFC"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:backgroundTint="#EEFF8C00"/>
+
 
             <Button
                 android:id="@+id/userInfoDeleteBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#E32323"
                 android:text="@string/delete"
-                android:textColor="#FFFDFD" />
+                android:textColor="#FFFDFD"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:background="@drawable/border1"
+                app:backgroundTint="#E32323"/>
 
 
         </LinearLayout>
-
-
     </ScrollView>
-
 </RelativeLayout>

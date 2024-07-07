@@ -7,9 +7,9 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.LingoLearner"
+        applicationId = "com.lingolearner.LingoLearner"
         minSdk = 23
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -43,7 +43,7 @@ android {
         }
     }
 
-    namespace = "com.example.LingoLearner"
+    namespace = "com.lingolearner.LingoLearner"
 
     sourceSets {
         getByName("main") {
@@ -58,6 +58,7 @@ android {
             res.srcDirs(listOf("src/main/res", "src/main/res/assets"))
         }
     }
+    buildToolsVersion = "34.0.0"
 }
 
 configurations.all {
