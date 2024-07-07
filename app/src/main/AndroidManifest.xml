@@ -13,7 +13,7 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launchers"
+        android:icon="@drawable/iconapp"
         android:label="@string/Lingolearner"
         android:maxSdkVersion="34"
         android:minSdkVersion="23"

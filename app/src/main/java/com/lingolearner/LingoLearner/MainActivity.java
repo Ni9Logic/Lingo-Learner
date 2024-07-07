@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         getstarted = findViewById(R.id.GetStarted);
         startsl = findViewById(R.id.startSL);
-        lingotxt=findViewById(R.id.lingolearner);
+        lingotxt = findViewById(R.id.lingolearner);
 
         Animation waveAnimation = AnimationUtils.loadAnimation(this, R.anim.waveanim);
         Animation lingoanim = AnimationUtils.loadAnimation(this, R.anim.bounce);

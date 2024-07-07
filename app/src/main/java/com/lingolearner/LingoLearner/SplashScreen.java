@@ -10,7 +10,6 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SplashScreen extends AppCompatActivity {
-
     private MediaPlayer mediaPlayer;
 
     @Override
@@ -18,6 +17,8 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.splash_screen);
+
+
 
         // Transparent ActionBar
         ActionBar actionBar = getSupportActionBar();

@@ -476,8 +476,6 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     private void highlightPhonicsActivities() {
         nurseryCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
         prepCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
-        oneCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
-        twoCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
     }
 
     private void highlightAnimalsActivity(){

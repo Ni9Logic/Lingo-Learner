@@ -30,7 +30,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class AdminPanel extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
+    TextView NavEmail;
+    TextView NavUserName;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     ImageButton buttonDrawerToggle;
@@ -126,6 +127,10 @@ public class AdminPanel extends AppCompatActivity implements NavigationView.OnNa
 
 
         navigationView.setNavigationItemSelectedListener(this);
+
+        View headerView = navigationView.getHeaderView(0);
+        NavUserName = headerView.findViewById(R.id.textUsername);
+        NavEmail = headerView.findViewById(R.id.useremail);
         updateNavigationHeaderFromDatabase();
     }
 
@@ -145,6 +150,25 @@ public class AdminPanel extends AppCompatActivity implements NavigationView.OnNa
             startActivity(new Intent(this, Login.class));
             finish();
         } else {
+            String userEmail = currentUser.getEmail();
+            DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
+            ref.orderByChild("email").equalTo(userEmail).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
+                        String username = userSnapshot.child("username").getValue(String.class);
+                        String email = userSnapshot.child("email").getValue(String.class);
+
+                        NavUserName.setText(username);
+                        NavEmail.setText(email);
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+                    Log.w("Error", "Error getting user data", databaseError.toException());
+                }
+            });
             updateNavigationHeaderFromDatabase();
         }
     }

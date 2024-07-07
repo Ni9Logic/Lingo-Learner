@@ -201,7 +201,7 @@ public class SignUp extends AppCompatActivity {
 
         progressbar.setVisibility(View.VISIBLE);
 
-        Users users = new Users(username, email, password, confirmPassword, dateOfBirth);
+        Users users = new Users(username, email, dateOfBirth);
 
         database = FirebaseDatabase.getInstance();
         FirebaseUser firebaseUser = mAuth.getCurrentUser();

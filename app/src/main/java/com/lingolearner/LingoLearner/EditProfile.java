@@ -123,23 +123,25 @@ public class EditProfile extends AppCompatActivity {
         if (user != null) {
             String userEmail = user.getEmail();
             StorageReference storageReference = FirebaseStorage.getInstance().getReference("profileImages/" + userEmail);
-            storageReference.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                @Override
-                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            storageReference.putFile(imageUri)
+                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
-                        public void onSuccess(Uri uri) {
-                            String imageUrl = uri.toString();
-                            saveImageUrlToDatabase(imageUrl);
+                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                            storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                @Override
+                                public void onSuccess(Uri uri) {
+                                    String imageUrl = uri.toString();
+                                    saveImageUrlToDatabase(imageUrl);
+                                }
+                            });
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(EditProfile.this, "Failed to upload image", Toast.LENGTH_SHORT).show();
                         }
                     });
-                }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(EditProfile.this, "Failed to upload image", Toast.LENGTH_SHORT).show();
-                }
-            });
         }
     }
 
@@ -147,25 +149,9 @@ public class EditProfile extends AppCompatActivity {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
             String userEmail = user.getEmail();
-            DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-            mDatabase.child("Users").addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
-                        String userDBEmail = userSnapshot.child("email").getValue(String.class);
-                        if (userDBEmail != null && userDBEmail.equals(userEmail)) {
-                            userSnapshot.getRef().child("profileImageUrl").setValue(imageUrl);
-                            Toast.makeText(EditProfile.this, "Profile image updated!", Toast.LENGTH_SHORT).show();
-                            break;
-                        }
-                    }
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-                    Log.e("Firebase", "Error updating image URL", databaseError.toException());
-                }
-            });
+            DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("Users");
+            mDatabase.child(userEmail.replace(".", ",")).child("profileImageUrl").setValue(imageUrl);
+            Toast.makeText(EditProfile.this, "Profile image updated!", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -173,29 +159,23 @@ public class EditProfile extends AppCompatActivity {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
             String userEmail = user.getEmail();
-            DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-            mDatabase.child("Users").addListenerForSingleValueEvent(new ValueEventListener() {
+            DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("Users");
+            mDatabase.child(userEmail.replace(".", ",")).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
-                        String userDBEmail = userSnapshot.child("email").getValue(String.class);
-                        if (userDBEmail != null && userDBEmail.equals(userEmail)) {
-                            String userUsername = userSnapshot.child("username").getValue(String.class);
-                            String userDOB = userSnapshot.child("dateOfBirth").getValue(String.class);
-                            String userPassword = userSnapshot.child("password").getValue(String.class);
-                            String profileImageUrl = userSnapshot.child("profileImageUrl").getValue(String.class);
+                    String userUsername = dataSnapshot.child("username").getValue(String.class);
+                    String userDOB = dataSnapshot.child("dateOfBirth").getValue(String.class);
+                    String userPassword = dataSnapshot.child("password").getValue(String.class);
+                    String profileImageUrl = dataSnapshot.child("profileImageUrl").getValue(String.class);
 
-                            // Display the user's email in the EditText
-                            userInfoEmail.setText(userEmail);
-                            userInfoDOB.setText(userDOB);
-                            userInfoPassword.setText(userPassword);
-                            userInfoUsername.setText(userUsername);
+                    // Display the user's email in the EditText
+                    userInfoEmail.setText(userEmail);
+                    userInfoDOB.setText(userDOB);
+                    userInfoPassword.setText(userPassword);
+                    userInfoUsername.setText(userUsername);
 
-                            if (profileImageUrl != null && !profileImageUrl.isEmpty()) {
-                                Glide.with(EditProfile.this).load(profileImageUrl).into(profileImageView);
-                            }
-                            break;
-                        }
+                    if (profileImageUrl != null && !profileImageUrl.isEmpty()) {
+                        Glide.with(EditProfile.this).load(profileImageUrl).into(profileImageView);
                     }
                 }
 
