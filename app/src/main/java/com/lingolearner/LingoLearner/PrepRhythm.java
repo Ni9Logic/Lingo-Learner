@@ -16,7 +16,7 @@ public class PrepRhythm extends AppCompatActivity {
 
     private VideoView videoView;
     private int currentVideoIndex = 0;
-    private int[] videoResources = {R.raw.preprhythm, R.raw.preprhytm1, R.raw.preprhythm2};
+    private int[] videoResources = {R.raw.preprhythm, R.raw.preprhythm1, R.raw.preprhythm2};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

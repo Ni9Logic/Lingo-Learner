@@ -82,30 +82,30 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         listView = findViewById(R.id.listViewAdmin);
 
         dataList = new ArrayList<>();
-        dataList.add("Animals Name"); // Done
-        dataList.add("Alphabet"); // Done
-        dataList.add("Birds Name"); // Done
-        dataList.add("Colors"); // Done
-        dataList.add("Counting"); // Done
-        dataList.add("Fruits Name"); // Done
-        dataList.add("Fun Activity"); // Done
-        dataList.add("Grammar"); // Done
-        dataList.add("Vocabulary"); // Done
-        dataList.add("Vegetables Name"); // Done
-        dataList.add("Parts of Body"); // Done
-        dataList.add("Weekdays"); // Done
-        dataList.add("Months"); // Done
-        dataList.add("Four Seasons"); // Done
-        dataList.add("Weather"); // Done
-        dataList.add("Listening"); // Done
-        dataList.add("Phonic"); // Done
-        dataList.add("Reading"); // Done
-        dataList.add("Rhythms"); // Done
-        dataList.add("Shapes"); // Done
-        dataList.add("Short Stories"); // Done
-        dataList.add("Games"); // Done
-        dataList.add("Writing"); // Done
-        dataList.add("Drawing"); // Done
+        dataList.add("Animals Name");
+        dataList.add("Alphabet");
+        dataList.add("Birds Name");
+        dataList.add("Colors");
+        dataList.add("Counting");
+        dataList.add("Fruits Name");
+        dataList.add("Fun Activity");
+        dataList.add("Grammar");
+        dataList.add("Vocabulary");
+        dataList.add("Vegetables Name");
+        dataList.add("Parts of Body");
+        dataList.add("Weekdays");
+        dataList.add("Months");
+        dataList.add("Four Seasons");
+        dataList.add("Weather");
+        dataList.add("Listening");
+        dataList.add("Phonic");
+        dataList.add("Reading");
+        dataList.add("Rhythms");
+        dataList.add("Shapes");
+        dataList.add("Short Stories");
+        dataList.add("Games");
+        dataList.add("Writing");
+        dataList.add("Drawing");
 
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, dataList);
         listView.setAdapter(adapter);

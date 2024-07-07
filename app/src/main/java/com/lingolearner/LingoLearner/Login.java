@@ -1,5 +1,6 @@
 package com.lingolearner.LingoLearner;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -47,6 +48,7 @@ public class Login extends AppCompatActivity {
     boolean isPasswordVisible = false;
     private static final int REQUEST_READ_EXTERNAL_STORAGE = 1;
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
