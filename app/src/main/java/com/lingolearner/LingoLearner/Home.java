@@ -104,8 +104,8 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         dataList.add("Shapes"); // Done
         dataList.add("Short Stories"); // Done
         dataList.add("Games"); // Done
-        dataList.add("Writing");
-        dataList.add("Drawing");
+        dataList.add("Writing"); // Done
+        dataList.add("Drawing"); // Done
 
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, dataList);
         listView.setAdapter(adapter);
@@ -132,6 +132,12 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                 if (selectedItem != null) {
                     resetHighlightState();
                     switch (selectedItem) {
+                        case "Drawing":
+                            highlightDrawingActivity();
+                            break;
+                        case "Writing":
+                            highlightWritingActivity();
+                            break;
                         case "Games":
                             highlightGamesActivity();
                             break;
@@ -389,6 +395,14 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         }
     }
 
+    private void highlightDrawingActivity(){
+        threeCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
+    }
+    private void highlightWritingActivity(){
+        oneCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
+        twoCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
+        threeCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
+    }
     private void highlightGamesActivity(){
         threeCard.setBackgroundColor(getResources().getColor(R.color.highlight_color));
     }
